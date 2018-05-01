@@ -1,11 +1,9 @@
-# Scrambler
-Программа, шифрующая текст с помощью различных алгоритмов.
+A program that encrypts text using various algorithms.
 
 v0.1:
 
-	-Виды шифрования
-		Реализовать шифр Цезаря, Вермана, Винежера, Гронсфельда, алгоритм Энигнмы, транспозицию, азбуку Морзе etc.	
+	-Crypt types
+		Implement the cipher of Caesar, Verman, Vineger, Gronsfeld, the Enigma algorithm, transposition, Morse code, etc.
 
-	-Справка
-		Реализовать справку на каждый вид шифрования.
-
+	-Reference
+		Implement help for each type of encryption.
