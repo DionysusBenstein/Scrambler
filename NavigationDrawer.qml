@@ -2,7 +2,7 @@
 
 /* Original File Name: NavigationDrawer.qml                        */
 
-/* Date: 30-04-2018                                                */
+/* Date: 21-04-2018                                                */
 
 /* Developer: Dionysus Benstein                                    */
 
@@ -62,6 +62,13 @@ Rectangle {
     height: parent.height
     x: _closeX
     z: 10
+
+    Keys.onPressed: {
+        if (event.key == Qt.Key_Back) {
+            hide()
+            event.accepted = true
+        }
+    }
 
     function _setupAnchors() {
         _rootItem = parent;

@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: NavigationDrawer.qml                        */
+
+/* Date: 01-05-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Реализация основного окна программы                */
+
+/*******************************************************************/
+
 import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
@@ -10,7 +24,7 @@ import QtQuick.Controls.Material 2.3
 //Light: #80b4ff
 
 ApplicationWindow {
-    id: window
+    id: mainWindow
     visible: true
     width: 640
     height: 480
@@ -45,7 +59,6 @@ ApplicationWindow {
                 anchors.left: parent.left
                 anchors.margins: dp(72)
             }
-
         }
 
         Item {

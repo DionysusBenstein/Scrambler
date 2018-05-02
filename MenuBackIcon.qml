@@ -2,7 +2,7 @@
 
 /* Original File Name: MenuBackIcon.qml                            */
 
-/* Date: 30-04-2018                                                */
+/* Date: 21-04-2018                                                */
 
 /* Developer: Dionysus Benstein                                    */
 
