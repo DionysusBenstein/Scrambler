@@ -36,6 +36,7 @@ ApplicationWindow {
         return (dpi < 120) ? x : x*(dpi/160)
     }
 
+    //AppBar
     ToolBar {
         id: toolBar
         height: dp(56)
@@ -82,6 +83,35 @@ ApplicationWindow {
         }
     }
 
+    //Loader для смены Фрагментов
+    Loader {
+        id: loader
+        anchors.top: toolBar.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        source: "Caesar.qml"
+
+        // Функция для смены содержимого Loader
+        function loadFragment(index) {
+
+            switch(index) {
+            case 0:
+                loader.source = "Caesar.qml"
+                break;
+            case 1:
+                loader.source = "Fragment2.qml"
+                break;
+            case 2:
+                loader.source = "Fragment3.qml"
+                break;
+            default:
+                loader.source = "Caesar.qml"
+                break;
+            }
+        }
+    }
+
     NavigationDrawer {
         id: nav
 
@@ -90,12 +120,69 @@ ApplicationWindow {
             color: "white"
 
             Rectangle {
+                id: navTop
                 color: "#4285f4"
                 anchors.top: parent.top
                 anchors.left: parent.left
                 anchors.right: parent.right
                 height: dp(148)
             }
+
+            Rectangle {
+                anchors.top: navTop.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+
+                // Список с пунктами меню
+                ListView {
+                    anchors.fill: parent
+
+
+                    delegate: Item {
+                        height: dp(48)
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+
+                        Rectangle {
+                            anchors.fill: parent
+                            anchors.margins: dp(5)
+                            color: "whitesmoke"
+
+                            Text {
+                                text: fragment
+                                anchors.fill: parent
+                                font.pixelSize: dp(20)
+
+                                renderType: Text.NativeRendering
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
+
+                            MouseArea {
+                                anchors.fill: parent
+
+                                //По нажатию на пункт меню заменяем компонент в Loader
+                                onClicked: {
+                                    loader.loadFragment(index)
+                                }
+                            }
+                        }
+                    }
+                    model: navModel
+                }
+            }
+
+            //Модель данных для списка с пунктами меню
+            ListModel {
+                id: navModel
+
+                ListElement {fragment: "Caesar"}
+                ListElement {fragment: "Fragment 2"}
+                ListElement {fragment: "Fragment 3"}
+            }
+
         }
     }
 }
+
