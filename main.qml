@@ -26,8 +26,10 @@ import QtQuick.Controls.Material 2.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-    width: 640
-    height: 480
+//    width: 640
+//    height: 480
+    width: 360
+    height: 640
     title: qsTr("Scrambler v0.1")
 
     readonly property int dpi: Screen.pixelDensity * 25.4
@@ -100,10 +102,10 @@ ApplicationWindow {
                 loader.source = "Caesar.qml"
                 break;
             case 1:
-                loader.source = "Fragment2.qml"
+                loader.source = "Vernam.qml"
                 break;
             case 2:
-                loader.source = "Fragment3.qml"
+                loader.source = "Vigenere.qml"
                 break;
             default:
                 loader.source = "Caesar.qml"
@@ -138,7 +140,6 @@ ApplicationWindow {
                 ListView {
                     anchors.fill: parent
 
-
                     delegate: Item {
                         height: dp(48)
                         anchors.left: parent.left
@@ -146,17 +147,27 @@ ApplicationWindow {
 
                         Rectangle {
                             anchors.fill: parent
-                            anchors.margins: dp(5)
-                            color: "whitesmoke"
+                            //color: "whitesmoke"
 
                             Text {
                                 text: fragment
+                                font.family: "Roboto"
                                 anchors.fill: parent
-                                font.pixelSize: dp(20)
+                                font.pixelSize: dp(14)
 
                                 renderType: Text.NativeRendering
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
+                            }
+
+                            Rectangle {
+                                width: dp(18)
+                                height: dp(18)
+                                color: "#4285f4"
+                                anchors.left: parent.left
+                                anchors.leftMargin: dp(16)
+                                anchors.verticalCenter: parent.verticalCenter
+                                radius: dp(2)
                             }
 
                             MouseArea {
@@ -177,9 +188,9 @@ ApplicationWindow {
             ListModel {
                 id: navModel
 
-                ListElement {fragment: "Caesar"}
-                ListElement {fragment: "Fragment 2"}
-                ListElement {fragment: "Fragment 3"}
+                ListElement {fragment: qsTr("Шифр Цезаря")}
+                ListElement {fragment: qsTr("Шифр Вернама")}
+                ListElement {fragment: qsTr("Шифр Виженера")}
             }
 
         }
