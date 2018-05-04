@@ -26,8 +26,8 @@ import QtQuick.Controls.Material 2.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-//    width: 640
-//    height: 480
+    //    width: 640
+    //    height: 480
     width: 360
     height: 640
     title: qsTr("Scrambler v0.1")
@@ -94,7 +94,7 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         source: "Caesar.qml"
 
-        // Функция для смены содержимого Loader
+        //Функция для смены содержимого Loader
         function loadFragment(index) {
 
             switch(index) {
@@ -107,11 +107,40 @@ ApplicationWindow {
             case 2:
                 loader.source = "Vigenere.qml"
                 break;
+            case 3:
+                loader.source = "Gronsfeld.qml"
+                break;
+            case 4:
+                loader.source = "Enigma.qml"
+                break;
+            case 5:
+                loader.source = "Settings.qml"
+                break;
+            case 6:
+                loader.source = "About.qml"
+                break;
+            case 7:
+                close()
+                break;
             default:
                 loader.source = "Caesar.qml"
                 break;
             }
         }
+    }
+
+    //Модель данных для списка с пунктами меню
+    ListModel {
+        id: navModel
+
+        ListElement {fragment: qsTr("Шифр Цезаря")}
+        ListElement {fragment: qsTr("Шифр Вернама")}
+        ListElement {fragment: qsTr("Шифр Виженера")}
+        ListElement {fragment: qsTr("Шифр Гронсфельда")}
+        ListElement {fragment: qsTr("Алгоритм Энигмы")}
+        ListElement {fragment: qsTr("Настройки")}
+        ListElement {fragment: qsTr("О программе")}
+        ListElement {fragment: qsTr("Выход")}
     }
 
     NavigationDrawer {
@@ -136,7 +165,7 @@ ApplicationWindow {
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
 
-                // Список с пунктами меню
+                //Список с пунктами меню
                 ListView {
                     anchors.fill: parent
 
@@ -145,55 +174,43 @@ ApplicationWindow {
                         anchors.left: parent.left
                         anchors.right: parent.right
 
-                        Rectangle {
+                        Text {
+                            text: fragment
+                            font.family: "Roboto"
                             anchors.fill: parent
-                            //color: "whitesmoke"
+                            anchors.left: itemIcon.right
+                            anchors.leftMargin: dp(72)
+                            font.pixelSize: dp(14)
 
-                            Text {
-                                text: fragment
-                                font.family: "Roboto"
-                                anchors.fill: parent
-                                font.pixelSize: dp(14)
+                            renderType: Text.NativeRendering
+                            horizontalAlignment: Text.AlignLeft
+                            verticalAlignment: Text.AlignVCenter
+                        }
 
-                                renderType: Text.NativeRendering
-                                horizontalAlignment: Text.AlignHCenter
-                                verticalAlignment: Text.AlignVCenter
-                            }
+                        Rectangle {
+                            id: itemIcon
+                            width: dp(18)
+                            height: dp(18)
+                            color: "#4285f4"
+                            anchors.left: parent.left
+                            anchors.leftMargin: dp(16)
+                            anchors.verticalCenter: parent.verticalCenter
+                            radius: dp(9)
+                        }
 
-                            Rectangle {
-                                width: dp(18)
-                                height: dp(18)
-                                color: "#4285f4"
-                                anchors.left: parent.left
-                                anchors.leftMargin: dp(16)
-                                anchors.verticalCenter: parent.verticalCenter
-                                radius: dp(2)
-                            }
+                        MouseArea {
+                            anchors.fill: parent
 
-                            MouseArea {
-                                anchors.fill: parent
-
-                                //По нажатию на пункт меню заменяем компонент в Loader
-                                onClicked: {
-                                    loader.loadFragment(index)
-                                }
+                            //По нажатию на пункт меню заменяем компонент в Loader
+                            onClicked: {
+                                loader.loadFragment(index)
+                                nav.hide()
                             }
                         }
                     }
                     model: navModel
                 }
             }
-
-            //Модель данных для списка с пунктами меню
-            ListModel {
-                id: navModel
-
-                ListElement {fragment: qsTr("Шифр Цезаря")}
-                ListElement {fragment: qsTr("Шифр Вернама")}
-                ListElement {fragment: qsTr("Шифр Виженера")}
-            }
-
         }
     }
 }
-
