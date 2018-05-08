@@ -36,7 +36,7 @@ ApplicationWindow {
 
     //AppBar
     ToolBar {
-        id: toolBar
+        id: appBar
         height: dp(56)
         spacing: dp(25)
         font.family: "Roboto"
@@ -46,6 +46,7 @@ ApplicationWindow {
         antialiasing: true
 
         Rectangle {
+            id: appBarRect
             anchors.fill: parent
             color: "#4285f4"
 
@@ -85,7 +86,7 @@ ApplicationWindow {
     //Loader для смены Фрагментов
     Loader {
         id: loader
-        anchors.top: toolBar.bottom
+        anchors.top: appBar.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
@@ -96,24 +97,31 @@ ApplicationWindow {
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
+                appBarRect.color = "#4285f4"
                 break;
             case 1:
                 loader.source = "Vernam.qml"
+                appBarRect.color = "#e91e63"
                 break;
             case 2:
                 loader.source = "Vigenere.qml"
+                appBarRect.color = "#f44336"
                 break;
             case 3:
                 loader.source = "Gronsfeld.qml"
+                appBarRect.color = "#673ab7"
                 break;
             case 4:
                 loader.source = "Enigma.qml"
+                appBarRect.color = "#9c27b0"
                 break;
             case 5:
                 loader.source = "Settings.qml"
+                appBarRect.color = "#27c72e"
                 break;
             case 6:
                 loader.source = "About.qml"
+                appBarRect.color = "#ffbc00"
                 break;
             case 7:
                 close()
@@ -182,6 +190,7 @@ ApplicationWindow {
                     anchors.fill: parent
 
                     delegate: ItemDelegate {
+                        id: itemDelegate
                         height: dp(48)
                         anchors.left: parent.left
                         anchors.right: parent.right
