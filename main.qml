@@ -51,7 +51,8 @@ ApplicationWindow {
             color: "#4285f4"
 
             Text {
-                text: qsTr("Scrambler")
+                id: headerText
+                text: qsTr("Шифр Цезаря")
                 font.family: "Roboto Medium"
                 font.pointSize: dp(15)
                 color: "white"
@@ -98,36 +99,45 @@ ApplicationWindow {
             case 0:
                 loader.source = "Caesar.qml"
                 appBarRect.color = "#4285f4"
+                headerText.text = "Шифр Цезаря"
                 break;
             case 1:
                 loader.source = "Vernam.qml"
                 appBarRect.color = "#e91e63"
+                headerText.text = "Шифр Вернама"
                 break;
             case 2:
                 loader.source = "Vigenere.qml"
                 appBarRect.color = "#f44336"
+                headerText.text = "Шифр Виженера"
                 break;
             case 3:
                 loader.source = "Gronsfeld.qml"
                 appBarRect.color = "#673ab7"
+                headerText.text = "Шифр Гронсфельда"
                 break;
             case 4:
                 loader.source = "Enigma.qml"
                 appBarRect.color = "#9c27b0"
+                headerText.text = "Алгоритм Энигмы"
                 break;
             case 5:
                 loader.source = "Settings.qml"
+                headerText.text = "Настройки"
                 appBarRect.color = "#27c72e"
                 break;
             case 6:
                 loader.source = "About.qml"
                 appBarRect.color = "#ffbc00"
+                headerText.text = "О программе"
                 break;
             case 7:
                 close()
                 break;
             default:
                 loader.source = "Caesar.qml"
+                appBarRect.color = "#4285f4"
+                headerText.text = "Шифр Цезаря"
                 break;
             }
         }
@@ -163,22 +173,13 @@ ApplicationWindow {
                 height: dp(148)
 
                 Image {
-                    id: drawerBackground
+                    id: drawerTopBackground
                     source: "images/DrawerBackground.png"
                     anchors.fill: parent
                 }
             }
 
-            Rectangle {
-                anchors.top: navTop.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-                height: dp(48)
-                color: "#4285f4"
-            }
-
-
-            Rectangle {
+            Item {
                 anchors.top: navTop.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
