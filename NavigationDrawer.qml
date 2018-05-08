@@ -46,7 +46,7 @@ Rectangle {
     readonly property int _openX: _rightEdge ? _rootItem.width - width : 0
     readonly property int _minimumX: _rightEdge ? _rootItem.width - panel.width : -panel.width
     readonly property int _maximumX: _rightEdge ? _rootItem.width : 0
-    readonly property int _pullThreshold: panel.width/2
+    readonly property int _pullThreshold: panel.width / 2
     readonly property int _slideDuration: 260
     readonly property int _openMarginSize: dp(20)
 
