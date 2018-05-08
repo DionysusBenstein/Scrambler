@@ -5,5 +5,11 @@
         <file>MenuBackIcon.qml</file>
         <file>NavigationDrawer.qml</file>
         <file>Caesar.qml</file>
+        <file>Vernam.qml</file>
+        <file>Vigenere.qml</file>
+        <file>Gronsfeld.qml</file>
+        <file>Enigma.qml</file>
+        <file>Settings.qml</file>
+        <file>About.qml</file>
     </qresource>
 </RCC>
