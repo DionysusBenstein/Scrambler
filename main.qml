@@ -18,11 +18,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
-//   Colors
-//Main: #4285f4
-//Dark: #0059c1
-//Light: #80b4ff
-
 ApplicationWindow {
     id: mainWindow
     visible: true
@@ -37,6 +32,7 @@ ApplicationWindow {
     function dp(x) {
         return (dpi < 120) ? x : x*(dpi/160)
     }
+
 
     //AppBar
     ToolBar {
@@ -79,7 +75,8 @@ ApplicationWindow {
             ToolButton {
                 anchors.top: parent.top
                 anchors.left: parent.left
-                anchors.margins: 3.1
+                anchors.margins: dp(3.1)
+                scale: dp(1.18)
                 onClicked: nav.toggle()
             }
         }
@@ -96,7 +93,6 @@ ApplicationWindow {
 
         //Функция для смены содержимого Loader
         function loadFragment(index) {
-
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
@@ -157,7 +153,22 @@ ApplicationWindow {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 height: dp(148)
+
+                Image {
+                    id: drawerBackground
+                    source: "images/DrawerBackground.png"
+                    anchors.fill: parent
+                }
             }
+
+            Rectangle {
+                anchors.top: navTop.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: dp(48)
+                color: "#4285f4"
+            }
+
 
             Rectangle {
                 anchors.top: navTop.bottom
@@ -167,9 +178,10 @@ ApplicationWindow {
 
                 //Список с пунктами меню
                 ListView {
+                    id: lView
                     anchors.fill: parent
 
-                    delegate: Item {
+                    delegate: ItemDelegate {
                         height: dp(48)
                         anchors.left: parent.left
                         anchors.right: parent.right
@@ -198,14 +210,10 @@ ApplicationWindow {
                             radius: dp(9)
                         }
 
-                        MouseArea {
-                            anchors.fill: parent
-
-                            //По нажатию на пункт меню заменяем компонент в Loader
-                            onClicked: {
-                                loader.loadFragment(index)
-                                nav.hide()
-                            }
+                        //По нажатию на пункт меню заменяем компонент в Loader
+                        onClicked: {
+                            loader.loadFragment(index)
+                            nav.hide()
                         }
                     }
                     model: navModel
@@ -214,3 +222,4 @@ ApplicationWindow {
         }
     }
 }
+
