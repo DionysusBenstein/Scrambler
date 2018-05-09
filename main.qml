@@ -30,9 +30,8 @@ ApplicationWindow {
     readonly property int dpi: Screen.pixelDensity * 25.4
 
     function dp(x) {
-        return (dpi < 120) ? x : x*(dpi/160)
+        return (dpi < 120) ? x : x * (dpi/160)
     }
-
 
     //AppBar
     ToolBar {
@@ -68,17 +67,19 @@ ApplicationWindow {
             height: dp(56)
             anchors.top: parent
             anchors.left: parent.left
+            clip: true
 
             MenuBackIcon {
                 id: menuBackIcon
-                anchors.centerIn: parent
+                anchors.top: parent.top
+                anchors.left: parent.left
+                anchors.margins: dp(17)
             }
 
             ToolButton {
-                anchors.top: parent.top
-                anchors.left: parent.left
-                anchors.margins: dp(3.1)
-                scale: dp(1.18)
+
+                anchors.centerIn: parent
+                scale: Qt.platform.os == "android" ? dp(3.1) : dp(1.18)
                 onClicked: nav.toggle()
             }
         }
@@ -164,25 +165,24 @@ ApplicationWindow {
             anchors.fill: parent
             color: "white"
 
-            Rectangle {
-                id: navTop
-                color: "#4285f4"
-                anchors.top: parent.top
-                anchors.left: parent.left
+            Item {
+                id: slideArea
                 anchors.right: parent.right
-                height: dp(148)
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                width: dp(20)
 
-                Image {
-                    id: drawerTopBackground
-                    source: "images/DrawerBackground.png"
-                    anchors.fill: parent
-                }
+                //Визуализация области слайда
+                //Rectangle {
+                //    anchors.fill: parent
+                //    color: "#ff4181"
+                //}
             }
 
             Item {
                 anchors.top: navTop.bottom
                 anchors.left: parent.left
-                anchors.right: parent.right
+                anchors.right: slideArea.left
                 anchors.bottom: parent.bottom
 
                 //Список с пунктами меню
@@ -227,6 +227,21 @@ ApplicationWindow {
                         }
                     }
                     model: navModel
+                }
+            }
+
+            Rectangle {
+                id: navTop
+                color: "#4285f4"
+                anchors.top: parent.top
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: dp(148)
+
+                Image {
+                    id: drawerTopBackground
+                    source: "images/DrawerBackground.png"
+                    anchors.fill: parent
                 }
             }
         }

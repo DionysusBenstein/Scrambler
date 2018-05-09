@@ -23,11 +23,11 @@ Rectangle {
         color: "black"
     }
 
-    // Свойства Navigation Drawer
-    property bool open: false          // Состояние Navigation Drawer - Открыт/Закрыт
-    property int position: Qt.LeftEdge // Положение Navigation Drawer - Слева/Справа
+    //Свойства Navigation Drawer
+    property bool open: false          //Состояние Navigation Drawer - Открыт/Закрыт
+    property int position: Qt.LeftEdge //Положение Navigation Drawer - Слева/Справа
 
-    // Функции открытия и закрытия Navigation Drawer
+    //Функции открытия и закрытия Navigation Drawer
     function show() {
         open = true
     }
@@ -40,13 +40,13 @@ Rectangle {
         open = open ? false : true
     }
 
-    // Внутренние свойства Navigation Drawer
+    //Внутренние свойства Navigation Drawer
     readonly property bool _rightEdge: position === Qt.RightEdge
     readonly property int _closeX: _rightEdge ? _rootItem.width : - panel.width
     readonly property int _openX: _rightEdge ? _rootItem.width - width : 0
     readonly property int _minimumX: _rightEdge ? _rootItem.width - panel.width : -panel.width
     readonly property int _maximumX: _rightEdge ? _rootItem.width : 0
-    readonly property int _pullThreshold: panel.width / 2
+    readonly property int _pullThreshold: panel.width/2
     readonly property int _slideDuration: 260
     readonly property int _openMarginSize: dp(20)
 
@@ -62,13 +62,6 @@ Rectangle {
     height: parent.height
     x: _closeX
     z: 10
-
-    Keys.onPressed: {
-        if (event.key == Qt.Key_Back) {
-            hide()
-            event.accepted = true
-        }
-    }
 
     function _setupAnchors() {
         _rootItem = parent;

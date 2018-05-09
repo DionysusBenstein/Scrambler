@@ -84,7 +84,7 @@ Item {
             running: true
             loops: Animation.Infinite
         }
-    }    
+    }
 }
 
 
