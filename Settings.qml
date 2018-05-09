@@ -5,9 +5,9 @@ import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
 //   Colors
-//Main: #27c72e
-//Dark: #009500
-//Light: #6cfb61
+//Main: #424242
+//Dark: #1b1b1b
+//Light: #6d6d6d
 
 Item {
     anchors.fill: parent
@@ -36,7 +36,7 @@ Item {
 
     Rectangle {
         id: found
-        color: "#6cfb61"
+        color: "#6d6d6d"
         width: 150
         height: width
         radius: width / 2
@@ -46,7 +46,7 @@ Item {
 
         Rectangle {
             id: child
-            color: "#27c72e"
+            color: "#424242"
             width: 100
             height: width
             radius: width / 2
@@ -54,7 +54,7 @@ Item {
 
             Rectangle {
                 id: dchild
-                color: "#009500"
+                color: "#1b1b1b"
                 width: 50
                 height: width
                 radius: width / 2
@@ -70,7 +70,7 @@ Item {
 
         Rectangle {
             id: moon
-            color: "#27c72e"
+            color: "#424242"
             width: 10
             height: width
             smooth: true

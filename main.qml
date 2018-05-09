@@ -125,7 +125,7 @@ ApplicationWindow {
             case 5:
                 loader.source = "Settings.qml"
                 headerText.text = "Настройки"
-                appBarRect.color = "#27c72e"
+                appBarRect.color = "#424242"
                 break;
             case 6:
                 loader.source = "About.qml"
@@ -247,4 +247,3 @@ ApplicationWindow {
         }
     }
 }
-
