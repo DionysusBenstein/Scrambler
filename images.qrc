@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>images/DrawerBackground.png</file>
+        <file>images/icons/appIcons/Scrambler24.ico</file>
+        <file>images/icons/appIcons/Scrambler24.png</file>
+        <file>images/icons/appIcons/Scrambler64.ico</file>
+        <file>images/icons/appIcons/Scrambler64.png</file>
+        <file>images/icons/ListView Icons/CaesarIcon.png</file>
     </qresource>
 </RCC>

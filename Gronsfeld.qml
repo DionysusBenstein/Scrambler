@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: Gronsfeld.qml                               */
+
+/* Date: 08-05-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Пользовательский интерфейс шифра Гронсвельда.      */
+
+/*******************************************************************/
+
 import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3

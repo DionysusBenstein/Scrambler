@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: Vernam.qml                                  */
+
+/* Date: 08-05-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Страница настроек приложения                       */
+
+/*******************************************************************/
+
 import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3

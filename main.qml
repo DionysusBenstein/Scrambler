@@ -8,7 +8,7 @@
 
 /* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
 
-/* Description: Реализация основного окна программы                */
+/* Description: Основное окно программы.                           */
 
 /*******************************************************************/
 
@@ -24,7 +24,7 @@ ApplicationWindow {
     //width: 640
     //height: 480
     width: 360
-    height: 640
+    height: 568
     title: qsTr("Scrambler v0.1")
 
     readonly property int dpi: Screen.pixelDensity * 25.4
@@ -148,14 +148,37 @@ ApplicationWindow {
     ListModel {
         id: navModel
 
-        ListElement {fragment: qsTr("Шифр Цезаря")}
-        ListElement {fragment: qsTr("Шифр Вернама")}
-        ListElement {fragment: qsTr("Шифр Виженера")}
-        ListElement {fragment: qsTr("Шифр Гронсфельда")}
-        ListElement {fragment: qsTr("Алгоритм Энигмы")}
-        ListElement {fragment: qsTr("Настройки")}
-        ListElement {fragment: qsTr("О программе")}
-        ListElement {fragment: qsTr("Выход")}
+        ListElement {
+            fragment: qsTr("Шифр Цезаря")
+        }
+
+        ListElement {
+            fragment: qsTr("Шифр Вернама")
+        }
+
+        ListElement {
+            fragment: qsTr("Шифр Виженера")
+        }
+
+        ListElement {
+            fragment: qsTr("Шифр Гронсфельда")
+        }
+
+        ListElement {
+            fragment: qsTr("Алгоритм Энигмы")
+        }
+
+        ListElement {
+            fragment: qsTr("Настройки")
+        }
+
+        ListElement {
+            fragment: qsTr("О программе")
+        }
+
+        ListElement {
+            fragment: qsTr("Выход")
+        }
     }
 
     NavigationDrawer {
