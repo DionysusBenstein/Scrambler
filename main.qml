@@ -21,8 +21,8 @@ import QtQuick.Controls.Material 2.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-    //    width: 640
-    //    height: 480
+    //width: 640
+    //height: 480
     width: 360
     height: 640
     title: qsTr("Scrambler v0.1")
@@ -129,7 +129,7 @@ ApplicationWindow {
                 break;
             case 6:
                 loader.source = "About.qml"
-                appBarRect.color = "#ffbc00"
+                appBarRect.color = "#4c00d5"
                 headerText.text = "О программе"
                 break;
             case 7:
@@ -166,13 +166,13 @@ ApplicationWindow {
             color: "white"
 
             Item {
-                id: slideArea
+                id: swipeArea
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                width: dp(20)
+                width: dp(1)
 
-                //Визуализация области слайда
+                //Визуализация области свайпа
                 //Rectangle {
                 //    anchors.fill: parent
                 //    color: "#ff4181"
@@ -182,7 +182,7 @@ ApplicationWindow {
             Item {
                 anchors.top: navTop.bottom
                 anchors.left: parent.left
-                anchors.right: slideArea.left
+                anchors.right: swipeArea.left
                 anchors.bottom: parent.bottom
 
                 //Список с пунктами меню
@@ -247,3 +247,4 @@ ApplicationWindow {
         }
     }
 }
+
