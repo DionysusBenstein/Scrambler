@@ -13,7 +13,5 @@
         <file>About.qml</file>
         <file>Test.qml</file>
         <file>TestForm.ui.qml</file>
-        <file>Abc.qml</file>
-        <file>AbcForm.ui.qml</file>
     </qresource>
 </RCC>

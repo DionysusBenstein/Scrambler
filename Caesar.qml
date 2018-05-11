@@ -102,8 +102,6 @@ Item {
 
     TextField {
         id: textField
-        width: dp(330)
-        height: dp(40)
         placeholderText: "Введите текст..."
         anchors.right: parent.right
         anchors.rightMargin: dp(15)
@@ -115,9 +113,7 @@ Item {
     }
 
     RadioButton {
-        id: radioButton
-        width: dp(150)
-        //height: dp(40)
+        id: encryptRadioButton
         text: qsTr(" Зашифровать")
         checked: true
         checkable: true
@@ -128,15 +124,13 @@ Item {
     }
 
     RadioButton {
-        id: radioButton1
-        width: dp(150)
-        //height: dp(40)
+        id: decryptRadioButton
         text: qsTr(" Расшифровать")
         checked: false
         checkable: true
         anchors.left: parent.left
         anchors.leftMargin: dp(13)
-        anchors.top: radioButton.bottom
+        anchors.top: encryptRadioButton.bottom
         anchors.topMargin: dp(-4)
     }
 
@@ -187,7 +181,7 @@ Item {
     }
 
     Button {
-        id: button
+        id: encryptButton
         x: dp(236)
         text: qsTr("Зашифровать")
         anchors.right: parent.right
