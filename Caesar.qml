@@ -16,6 +16,7 @@ import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
+import "."
 
 //   Colors
 //Main: #4285f4
@@ -32,6 +33,8 @@ Item {
     }
 
     Material.accent: "#4285f4"
+
+
 
 //    Text {
 //        id: testText
@@ -120,6 +123,7 @@ Item {
         anchors.leftMargin: dp(13)
         anchors.top: textField.bottom
         anchors.topMargin: dp(1)
+        onClicked: encryptDecryptButton.text = "Зашифровать"
     }
 
     RadioButton {
@@ -131,6 +135,7 @@ Item {
         anchors.leftMargin: dp(13)
         anchors.top: encryptRadioButton.bottom
         anchors.topMargin: dp(-4)
+        onClicked: encryptDecryptButton.text = "Расшифровать"
     }
 
     SpinBox {
@@ -180,13 +185,14 @@ Item {
     }
 
     Button {
-        id: encryptButton
+        id: encryptDecryptButton
         x: dp(236)
         text: qsTr("Зашифровать")
         anchors.right: parent.right
         anchors.rightMargin: dp(16)
         anchors.top: textField.bottom
         anchors.topMargin: dp(0)
+        onClicked: onEncryptClicked()
     }
 
     Button {

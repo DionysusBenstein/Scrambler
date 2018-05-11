@@ -16,6 +16,8 @@
 #define SIGNALSHANDLER_H
 
 #include <QObject>
+#include <QVariant>
+#include "Caesar.h"
 
 class SignalsHandler : public QObject
 {
@@ -23,9 +25,8 @@ class SignalsHandler : public QObject
 public:
     explicit SignalsHandler(QObject *parent = nullptr);
 
-signals:
-
 public slots:
+    void encryptSlot();
 };
 
 #endif // SIGNALSHANDLER_H

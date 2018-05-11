@@ -33,6 +33,10 @@ ApplicationWindow {
         return (dpi < 120) ? x : x * (dpi/160)
     }
 
+    signal onEncryptClicked()
+    signal onDecryptClicked()
+    signal onCopyClicked()
+
     //AppBar
     ToolBar {
         id: appBar
