@@ -25,7 +25,7 @@ ApplicationWindow {
     //height: 480
     width: 360
     height: 568
-    title: qsTr("Scrambler v0.1")
+    title: qsTr("Scrambler v0.1 beta")
 
     readonly property int dpi: Screen.pixelDensity * 25.4
 
