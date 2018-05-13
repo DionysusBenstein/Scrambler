@@ -26,7 +26,8 @@ public:
     explicit SignalsHandler(QObject *parent = nullptr);
 
 public slots:
-    void encryptSlot();
+    void caesarEncrypt();
+
 };
 
 #endif // SIGNALSHANDLER_H

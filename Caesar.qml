@@ -16,7 +16,6 @@ import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
-import "."
 
 //   Colors
 //Main: #4285f4
@@ -24,6 +23,7 @@ import "."
 //Light: #80b4ff
 
 Item {
+    id: caesar
     anchors.fill: parent
 
     readonly property int dpi: Screen.pixelDensity * 25.4
@@ -34,7 +34,9 @@ Item {
 
     Material.accent: "#4285f4"
 
-
+    signal onEncryptClicked()
+    signal onDecryptClicked()
+    signal onCopyClicked()
 
 //    Text {
 //        id: testText

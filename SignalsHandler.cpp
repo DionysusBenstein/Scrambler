@@ -19,15 +19,15 @@ SignalsHandler::SignalsHandler(QObject *parent) : QObject(parent)
     //
 }
 
-void SignalsHandler::encryptSlot()
+void SignalsHandler::caesarEncrypt()
 {
     QObject* textField = this->parent()->findChild<QObject*>("textField");
     QObject* spinBox = this->parent()->findChild<QObject*>("spinBox");
     QObject* outputLabel = this->parent()->findChild<QObject*>("outoutLabel");
 
-    Caesar cipher;
+    Caesar caesarCipher;
     QString str = (textField->property("text")).toString();
     int key = (spinBox->property("value")).toInt();
 
-    outputLabel->setProperty("text", cipher.encrypt(str, key));
+    outputLabel->setProperty("text", caesarCipher.encrypt(str, key));
 }

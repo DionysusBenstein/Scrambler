@@ -33,10 +33,6 @@ ApplicationWindow {
         return (dpi < 120) ? x : x * (dpi/160)
     }
 
-    signal onEncryptClicked()
-    signal onDecryptClicked()
-    signal onCopyClicked()
-
     //AppBar
     ToolBar {
         id: appBar
@@ -69,7 +65,7 @@ ApplicationWindow {
             id: menuItem
             width: dp(56)
             height: dp(56)
-            anchors.top: parent
+            anchors.top: parent.top
             anchors.left: parent.left
             clip: true
 
