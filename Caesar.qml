@@ -34,75 +34,75 @@ Item {
 
     Material.accent: "#4285f4"
 
-    signal onEncryptClicked()
-    signal onDecryptClicked()
-    signal onCopyClicked()
+    signal encryptClicked()
+    signal decryptClicked()
+    signal copyClicked()
 
-//    Text {
-//        id: testText
-//        text: "Тут <br> скоро <br> будет <br> шифр <br> Цезаря..."
-//        color: "#191919"
-//        anchors.top: parent.top
-//        anchors.left: parent.left
-//        anchors.margins: dp(20)
-//        font.pixelSize: dp(30)
-//        font.family: "Roboto"
+    //    Text {
+    //        id: testText
+    //        text: "Тут <br> скоро <br> будет <br> шифр <br> Цезаря..."
+    //        color: "#191919"
+    //        anchors.top: parent.top
+    //        anchors.left: parent.left
+    //        anchors.margins: dp(20)
+    //        font.pixelSize: dp(30)
+    //        font.family: "Roboto"
 
-//        renderType: Text.NativeRendering
-//    }
+    //        renderType: Text.NativeRendering
+    //    }
 
-//    Rectangle {
-//        id: found
-//        color: "#80b4ff"
-//        width: 150
-//        height: width
-//        radius: width / 2
-//        anchors.right: parent.right
-//        anchors.top: parent.top
-//        anchors.margins: dp(30)
+    //    Rectangle {
+    //        id: found
+    //        color: "#80b4ff"
+    //        width: 150
+    //        height: width
+    //        radius: width / 2
+    //        anchors.right: parent.right
+    //        anchors.top: parent.top
+    //        anchors.margins: dp(30)
 
-//        Rectangle {
-//            id: child
-//            color: "#4285f4"
-//            width: 100
-//            height: width
-//            radius: width / 2
-//            anchors.centerIn: parent
+    //        Rectangle {
+    //            id: child
+    //            color: "#4285f4"
+    //            width: 100
+    //            height: width
+    //            radius: width / 2
+    //            anchors.centerIn: parent
 
-//            Rectangle {
-//                id: dchild
-//                color: "#0059c1"
-//                width: 50
-//                height: width
-//                radius: width / 2
-//                anchors.centerIn: parent
-//            }
-//        }
-//    }
+    //            Rectangle {
+    //                id: dchild
+    //                color: "#0059c1"
+    //                width: 50
+    //                height: width
+    //                radius: width / 2
+    //                anchors.centerIn: parent
+    //            }
+    //        }
+    //    }
 
-//    Item {
-//        width: 150
-//        height: width
-//        anchors.centerIn: found
+    //    Item {
+    //        width: 150
+    //        height: width
+    //        anchors.centerIn: found
 
-//        Rectangle {
-//            id: moon
-//            color: "#4285f4"
-//            width: 10
-//            height: width
-//            smooth: true
-//            antialiasing: true
-//            radius: width / 2
-//        }
+    //        Rectangle {
+    //            id: moon
+    //            color: "#4285f4"
+    //            width: 10
+    //            height: width
+    //            smooth: true
+    //            antialiasing: true
+    //            radius: width / 2
+    //        }
 
-//        RotationAnimation on rotation {
-//            from: 0
-//            to: 360
-//            duration: 6000
-//            running: true
-//            loops: Animation.Infinite
-//        }
-//    }
+    //        RotationAnimation on rotation {
+    //            from: 0
+    //            to: 360
+    //            duration: 6000
+    //            running: true
+    //            loops: Animation.Infinite
+    //        }
+    //    }
 
     TextField {
         id: textField
@@ -152,6 +152,8 @@ Item {
         id: pane
         width: dp(280)
         height: dp(248)
+        scale: 0
+        opacity: 0
         font.pointSize: dp(20)
         anchors.bottom: parent.bottom
         anchors.bottomMargin: dp(36)
@@ -184,6 +186,24 @@ Item {
             font.pointSize: dp(12)
             fontSizeMode: Text.Fit
         }
+
+        NumberAnimation on scale {
+            id: paneScaleAnimation
+            easing.type: Easing.OutQuint
+            from: 0
+            to: 1
+            duration: 350
+            running: false
+        }
+
+        NumberAnimation on opacity {
+            id: paneOpacityAnimation
+            easing.type: Easing.OutQuint
+            from: 0
+            to: 1
+            duration: 350
+            running: false
+        }
     }
 
     Button {
@@ -194,7 +214,13 @@ Item {
         anchors.rightMargin: dp(16)
         anchors.top: textField.bottom
         anchors.topMargin: dp(0)
-        onClicked: onEncryptClicked()
+        onClicked: {
+            encryptClicked()
+            paneScaleAnimation.running = true
+            paneOpacityAnimation.running = true
+            copyButtonScaleAnimation.running = true
+            copyButtonOpacityAnimation.running = true
+        }
     }
 
     Button {
@@ -202,14 +228,32 @@ Item {
         x: dp(220)
         y: dp(9)
         text: qsTr("Скопировать")
+        scale: 0
+        opacity: 0
         anchors.bottom: pane.bottom
         anchors.bottomMargin: dp(1)
-        checkable: false
-        checked: false
         anchors.rightMargin: dp(14)
         anchors.topMargin: dp(-53)
         anchors.right: pane.right
         flat: true
         Material.foreground: "#4285f4"
+
+        NumberAnimation on scale {
+            id: copyButtonScaleAnimation
+            easing.type: Easing.OutQuint
+            from: 0
+            to: 1
+            duration: 350
+            running: false
+        }
+
+        NumberAnimation on opacity {
+            id: copyButtonOpacityAnimation
+            easing.type: Easing.OutQuint
+            from: 0
+            to: 1
+            duration: 350
+            running: false
+        }
     }
 }

@@ -14,10 +14,7 @@
 
 #include "SignalsHandler.h"
 
-SignalsHandler::SignalsHandler(QObject *parent) : QObject(parent)
-{
-    //
-}
+SignalsHandler::SignalsHandler(QObject *parent) : QObject(parent) {}
 
 void SignalsHandler::caesarEncrypt()
 {

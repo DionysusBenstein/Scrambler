@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
     QObject* root = engine.rootObjects()[0];
     SignalsHandler *signalsHandler = new SignalsHandler(root);
 
-    QObject::connect(root, SIGNAL(onEncryptClicked()), signalsHandler, SLOT(caesarEncrypt()));
+    QObject::connect(root, SIGNAL(encryptClicked()), signalsHandler, SLOT(caesarEncrypt()));
 
     return app.exec();
 }
+
