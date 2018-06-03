@@ -123,21 +123,26 @@ ApplicationWindow {
                     headerText.text = "Шифр Гронсфельда"
                     break;
                 case 4:
+                    loader.source = "Morse.qml"
+                    appBarRect.color = "#673ab7"
+                    headerText.text = "Азбука Морзе"
+                    break;
+                case 5:
                     loader.source = "Enigma.qml"
                     appBarRect.color = "#9c27b0"
                     headerText.text = "Алгоритм Энигмы"
                     break;
-                case 5:
+                case 6:
                     loader.source = "Settings.qml"
                     headerText.text = "Настройки"
                     appBarRect.color = "#424242"
                     break;
-                case 6:
+                case 7:
                     loader.source = "About.qml"
                     appBarRect.color = "#4c00d5"
                     headerText.text = "О программе"
                     break;
-                case 7:
+                case 8:
                     close()
                     break;
                 default:
