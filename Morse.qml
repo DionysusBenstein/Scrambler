@@ -146,7 +146,10 @@ Item {
             width: dp(244)
             height: dp(146)
             color: "#9a9a9a"
-            text: morse.encrypt(textField.text)
+            text: {
+                morse.isMorse(textField.text) ? morse.decrypt(textField.text) : morse.encrypt(textField.text)
+            }
+            font.pixelSize: dp(20);
             antialiasing: true
             smooth: true
             anchors.top: label.bottom
@@ -168,7 +171,8 @@ Item {
         anchors.right: pane.right
         flat: true
         Material.foreground: "#3f51b5"
-        onClicked: clipboard.copy(outputLabel.text)
+
+        //onClicked: clipboard.copy(outputLabel.text)
     }
 }
 
