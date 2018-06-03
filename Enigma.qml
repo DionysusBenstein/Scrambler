@@ -19,8 +19,8 @@ import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
 //   Colors
-//Main: #9c27b0
-//Dark: #6a0080
+//Main:  #9c27b0
+//Dark:  #6a0080
 //Light: #d05ce3
 
 Item {

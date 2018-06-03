@@ -23,11 +23,11 @@ ApplicationWindow {
     visible: true
 
     //Desktop resolution
-    //width: 640
+    //width:  640
     //height: 480
 
     //Mobile resolution
-    width: 360
+    width:  360
     height: 568
 
     title: qsTr("Scrambler v0.1.0-alpha1")
@@ -124,7 +124,7 @@ ApplicationWindow {
                     break;
                 case 4:
                     loader.source = "Morse.qml"
-                    appBarRect.color = "#673ab7"
+                    appBarRect.color = "#3f51b5"
                     headerText.text = "Азбука Морзе"
                     break;
                 case 5:
@@ -162,6 +162,7 @@ ApplicationWindow {
         ListElement {fragment: qsTr("Шифр Вернама")}
         ListElement { fragment: qsTr("Шифр Виженера")}
         ListElement {fragment: qsTr("Шифр Гронсфельда")}
+        ListElement {fragment: qsTr("Азбука Морзе")}
         ListElement {fragment: qsTr("Алгоритм Энигмы")}
         ListElement { fragment: qsTr("Настройки")}
         ListElement { fragment: qsTr("О программе")}

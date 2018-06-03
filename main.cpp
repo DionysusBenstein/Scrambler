@@ -15,10 +15,8 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    QObject* root = engine.rootObjects()[0];
-    SignalsHandler *signalsHandler = new SignalsHandler(root);
-
-    QObject::connect(root, SIGNAL(encryptClicked()), signalsHandler, SLOT(caesarEncrypt()));
+    //QObject* root = engine.rootObjects()[0];
+    //SignalsHandler *signalsHandler = new SignalsHandler(root);
 
     return app.exec();
 }
