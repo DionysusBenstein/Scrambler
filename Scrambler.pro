@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     SignalsHandler.cpp \
-    Caesar.cpp
+    Caesar.cpp \
+    Morse.cpp
 
 RESOURCES += qml.qrc \
     images.qrc
@@ -32,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     SignalsHandler.h \
-    Caesar.h
+    Caesar.h \
+    Morse.h
