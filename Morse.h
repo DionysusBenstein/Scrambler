@@ -20,12 +20,11 @@
 class Morse : public QObject
 {
     Q_OBJECT
+
 public:
     explicit Morse(QObject *parent = nullptr);
-
-signals:
-
-public slots:
+    //Метод для шифрования текста
+    Q_INVOKABLE QString encrypt(const QString str);
 };
 
-#endif // MORSE_H
+#endif //MORSE_H

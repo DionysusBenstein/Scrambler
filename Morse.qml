@@ -18,6 +18,9 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
+import com.company.morse 1.0
+import com.company.clipboard 1.0
+
 //   Colors
 //Main:  #3f51b5
 //Dark:  #002984
@@ -100,6 +103,9 @@ Item {
 //        }
 //    }
 
+    Morse { id: morse }
+    Clipboard { id: clipboard }
+
     TextField {
         id: textField
         placeholderText: "Введите текст..."
@@ -110,16 +116,6 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: dp(49)
         renderType: Text.QtRendering
-    }
-
-    Button {
-        id: encryptDecryptButton
-        x: dp(236)
-        text: qsTr("Зашифровать")
-        anchors.right: parent.right
-        anchors.rightMargin: dp(16)
-        anchors.top: textField.bottom
-        anchors.topMargin: dp(0)
     }
 
     Pane {
@@ -145,12 +141,12 @@ Item {
         }
 
         Label {
-            id: outoutLabel
+            id: outputLabel
             x: dp(12)
             width: dp(244)
             height: dp(146)
             color: "#9a9a9a"
-            text: qsTr("Привет, Мир!")
+            text: morse.encrypt(textField.text)
             antialiasing: true
             smooth: true
             anchors.top: label.bottom
@@ -172,6 +168,7 @@ Item {
         anchors.right: pane.right
         flat: true
         Material.foreground: "#3f51b5"
+        onClicked: clipboard.copy(outputLabel.text)
     }
 }
 

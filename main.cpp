@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "SignalsHandler.h"
+
+#include "Morse.h"
+#include "Clipboard.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,12 +13,13 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    qmlRegisterType<Morse>("com.company.morse", 1, 0, "Morse");
+    qmlRegisterType<Clipboard>("com.company.clipboard", 1, 0, "Clipboard");
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
     if (engine.rootObjects().isEmpty())
         return -1;
-
-    //QObject* root = engine.rootObjects()[0];
-    //SignalsHandler *signalsHandler = new SignalsHandler(root);
 
     return app.exec();
 }
