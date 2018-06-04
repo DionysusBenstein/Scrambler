@@ -35,7 +35,6 @@ public:
     Q_INVOKABLE bool isMorse(const QString str);
 
 private:
-    QString alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
 
     /*
     QMap <char, QString> morse = {
