@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Enigma.qml                                  */
+/* Original File Name: Morse.qml                                   */
 
 /* Date: 03-06-2018                                                */
 
