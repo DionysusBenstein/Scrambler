@@ -16,11 +16,11 @@
 
 Morse::Morse(QObject *parent) : QObject(parent){}
 
-QString Morse::encrypt(QString str)
+//Метод для шифрования текста
+QString Morse::encrypt(const QString str)
 {
     QString output;
 
-    /*
     for (size_t i = 0; i < str.length(); ++i)
     {
         //Letters
@@ -411,19 +411,11 @@ QString Morse::encrypt(QString str)
             }
         }
     }
-    */
-
-    str.toLower();
-
-    for (size_t i = 0; i < str.length(); ++i)
-    {
-        output += (morse.find('a'));
-    }
-    //output += morse.find(' ');
 
     return output;
 }
 
+//Метод для дешифрования текста
 QString Morse::decrypt(const QString str)
 {
     QString output;
@@ -572,10 +564,23 @@ QString Morse::decrypt(const QString str)
     return output;
 }
 
+//Метод проверки на то, что находится в строке
 bool Morse::isMorse(const QString str)
 {
+    bool is_morse = true;
+
     for (size_t i = 0; i < str.length(); ++i)
     {
-        return str[i] == 'a' ? false : true;
+        if (str[i] >= 'A' && str[i] <= 'Z' || str[i] >= 'a' && str[i] <= 'z')
+        {
+            is_morse = false;
+            break;
+        }
+        else
+        {
+            is_morse = true;
+        }
     }
+
+    return is_morse;
 }

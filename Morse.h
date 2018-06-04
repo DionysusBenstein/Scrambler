@@ -26,17 +26,18 @@ public:
     explicit Morse(QObject *parent = nullptr);
 
     //Метод для шифрования текста
-    Q_INVOKABLE auto encrypt(QString str);
+    Q_INVOKABLE QString encrypt(const QString str);
 
     //Метод для дешифрования текста
     Q_INVOKABLE QString decrypt(const QString str);
 
-    //Метод проверки на обычный текст или шифр морзе
+    //Метод проверки на то, что находится в строке
     Q_INVOKABLE bool isMorse(const QString str);
 
 private:
     QString alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
 
+    /*
     QMap <char, QString> morse = {
             { 'a', ".-"},
             { 'b', "-..."},
@@ -88,6 +89,7 @@ private:
             { ' ', "-...-"},
             { '@', ".--.-."},
     };
+    */
 };
 
 #endif //MORSE_H
