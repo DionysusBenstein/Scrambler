@@ -423,153 +423,309 @@ QString Morse::decrypt(const QString str)
     for (size_t i = 0; i < str.length(); ++i)
     {
         //Letters
-        if (str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
+
+        if (i == 0)
         {
-            if (str[i] == ' ' && i != 0)
+            if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == ' ')
             {
                 output += 'a';
             }
-            else if(str[i] != ' ' && i == 0)
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "b";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "c";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == ' ')
+            {
+                output += "d";
+            }
+            else if (str[i] == '.' && str[i + 1] == ' ')
+            {
+                output += "e";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "f";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == ' ')
+            {
+                output += "g";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "h";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == ' ')
+            {
+                output += "i";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "j";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
+            {
+                output += "k";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "l";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == ' ')
+            {
+                output += "m";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == ' ')
+            {
+                output += "n";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == ' ')
+            {
+                output += "o";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "p";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "q";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == ' ')
+            {
+                output += "r";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 1] == '.' && str[i + 3] == ' ')
+            {
+                output += "s";
+            }
+            else if (str[i] == "-" && str[i + 1] == ' ')
+            {
+                output += "t";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
+            {
+                output += "u";
+            }
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == '.'  && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "v";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == ' ')
+            {
+                output += "w";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' &&str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "x";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "y";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "z";
+            }
+            //Punctuation marks
+            else if (str[i] == '.' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '.')
+            {
+                output += ".";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == '-')
+            {
+                output += ",";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '-')
+            {
+                output += "-";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.')
+            {
+                output += "\"";
+            }
+            else if (str[i] == '-' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '-' && str[i + 5] == '.')
+            {
+                output += ";";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '.')
+            {
+                output += ":";
+            }
+            else if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == '-' && str[i + 5] == '.')
+            {
+                output += "\'";
+            }
+            else if (str[i] == '-' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '-' && str[i + 5] == '-')
+            {
+                output += "!";
+            }
+            else if (str[i + 1] == ' ')
+            {
+                output += " ";
+            }
+        }
+        else
+        {
+            if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
             {
                 output += 'a';
             }
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "b";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "c";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
-        {
-            output += "d";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == ' ')
-        {
-            output += "e";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "f";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
-        {
-            output += "g";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "h";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == ' ')
-        {
-            output += "i";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
-        {
-            output += "j";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
-        {
-            output += "k";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "l";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == ' ')
-        {
-            output += "m";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == ' ')
-        {
-            output += "n";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
-        {
-            output += "o";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "p";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 3] == '-' && str[i + 5] == ' ')
-        {
-            output += "q";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
-        {
-            output += "r";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
-        {
-            output += "s";
-        }
-        else if (str[i] == ' ' && str[i + 1] == "-" && str[i + 2] == ' ')
-        {
-            output += "t";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
-        {
-            output += "u";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.'  && str[i + 4] == '-' && str[i + 5] == ' ')
-        {
-            output += "v";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
-        {
-            output += "w";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '-' && str[i + 5] == ' ')
-        {
-            output += "x";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
-        {
-            output += "y";
-        }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
-        {
-            output += "z";
-        }
-        //Punctuation marks
-        else if (str[i] == "......" && str[i + 1] == ' ')
-        {
-            output += ".";
-        }
-        else if (str[i] == ".-.-.-" && str[i + 1] == ' ')
-        {
-            output += ",";
-        }
-        else if (str[i] == "-....-" && str[i + 1] == ' ')
-        {
-            output += "-";
-        }
-        else if (str[i] == ".-.-." && str[i + 1] == ' ')
-        {
-            output += "\"";
-        }
-        else if (str[i] == "-.-.-." && str[i + 1] == ' ')
-        {
-            output += ";";
-        }
-        else if (str[i] == "---..." && str[i + 1] == ' ')
-        {
-            output += ":";
-        }
-        else if (str[i] == ".----." && str[i + 1] == ' ')
-        {
-            output += "\'";
-        }
-        else if (str[i] == "--..--" && str[i + 1] == ' ')
-        {
-            output += "!";
-        }
-        else if (str[i] == ' ' && str[i + 1] == ' ')
-        {
-            output += " ";
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "b";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "c";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "d";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == ' ')
+            {
+                output += "e";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "f";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "g";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "h";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == ' ')
+            {
+                output += "i";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
+            {
+                output += "j";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "k";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "l";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == ' ')
+            {
+                output += "m";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == ' ')
+            {
+                output += "n";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "o";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "p";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 3] == '-' && str[i + 5] == ' ')
+            {
+                output += "q";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "r";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            {
+                output += "s";
+            }
+            else if (str[i] == ' ' && str[i + 1] == "-" && str[i + 2] == ' ')
+            {
+                output += "t";
+            }
+            else if ( str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "u";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.'  && str[i + 4] == '-' && str[i + 5] == ' ')
+            {
+                output += "v";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            {
+                output += "w";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&str[i + 3] == '.' && str[i + 4] == '-' && str[i + 5] == ' ')
+            {
+                output += "x";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
+            {
+                output += "y";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            {
+                output += "z";
+            }
+            //Punctuation marks
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' &&
+                     str[i + 5] == '.' && str[i + 6] == '.')
+            {
+                output += ".";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '-' &&
+                     str[i + 5] == '.' && str[i + 6] == '-')
+            {
+                output += ",";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '-')
+            {
+                output += "-";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '-' &&
+                     str[i + 5] == '.')
+            {
+                output += "\"";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' &&
+                     str[i + 5] == '-' && str[i + 6] == '.')
+            {
+                output += ";";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '.' &&
+                     str[i + 5] == '.' && str[i + 6] == '.')
+            {
+                output += ":";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '-' &&
+                     str[i + 5] == '-' && str[i + 6] == '.')
+            {
+                output += "\'";
+            }
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' &&
+                     str[i + 5] == '-' && str[i + 6] == '-')
+            {
+                output += "!";
+            }
+            else if (str[i] == ' ' && str[i + 1] == ' ')
+            {
+                output += " ";
+            }
         }
     }
     return output;
