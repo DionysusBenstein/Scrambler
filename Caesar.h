@@ -23,9 +23,9 @@ class Caesar : public QObject
 public:
     explicit Caesar(QObject *parent = nullptr);
     //Метод шифрования текста
-    QString encrypt(QString str, int key);
+    Q_INVOKABLE QString encrypt(const QString str, const int key) const;
     //Метод дешифрования текста
-    QString decrypt(QString str, int key);
+    Q_INVOKABLE QString decrypt(const QString str,const  int key) const;
 
 private:
     //Инициализация строк с алфавитом, знаками и цифрами

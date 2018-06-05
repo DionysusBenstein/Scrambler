@@ -20,7 +20,7 @@ Caesar::Caesar(QObject *parent) : QObject(parent)
 }
 
 //Метод шифрования текста
-QString Caesar::encrypt(QString str, int key)
+QString Caesar::encrypt(const QString str, const int key) const
 {
     QString output;
 
@@ -135,7 +135,7 @@ QString Caesar::encrypt(QString str, int key)
 }
 
 //Метод дешифрования текста
-QString Caesar::decrypt(QString str, int key)
+QString Caesar::decrypt(const QString str, const int key) const
 {
     QString output;
 

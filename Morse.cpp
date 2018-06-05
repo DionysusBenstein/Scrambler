@@ -429,7 +429,7 @@ QString Morse::decrypt(const QString str)
             {
                 output += 'a';
             }
-            else if(i == 0)
+            else if(str[i] != ' ' && i == 0)
             {
                 output += 'a';
             }
