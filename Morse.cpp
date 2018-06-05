@@ -416,14 +416,13 @@ QString Morse::encrypt(const QString str)
 }
 
 //Метод для дешифрования текста
-QString Morse::decrypt(const QString str)
+QString Morse::decrypt(QString str)
 {
     QString output;
 
     for (size_t i = 0; i < str.length(); ++i)
     {
         //Letters
-
         if (i == 0)
         {
             if (str[i] == '.' && str[i + 1] == '-' && str[i + 2] == ' ')
@@ -581,15 +580,18 @@ QString Morse::decrypt(const QString str)
             {
                 output += 'a';
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "b";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "c";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == ' ')
             {
                 output += "d";
             }
@@ -597,15 +599,18 @@ QString Morse::decrypt(const QString str)
             {
                 output += "e";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "f";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == ' ')
             {
                 output += "g";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "h";
             }
@@ -613,15 +618,18 @@ QString Morse::decrypt(const QString str)
             {
                 output += "i";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == '-' && str[i + 5] == ' ')
             {
                 output += "j";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == ' ')
             {
                 output += "k";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "l";
             }
@@ -633,23 +641,28 @@ QString Morse::decrypt(const QString str)
             {
                 output += "n";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == ' ')
             {
                 output += "o";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "p";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 3] == '-' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 3] == '-' && str[i + 5] == ' ')
             {
                 output += "q";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == ' ')
             {
                 output += "r";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == ' ')
             {
                 output += "s";
             }
@@ -657,74 +670,90 @@ QString Morse::decrypt(const QString str)
             {
                 output += "t";
             }
-            else if ( str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == ' ')
+            else if ( str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                      str[i + 4] == ' ')
             {
                 output += "u";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.'  && str[i + 4] == '-' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.'  &&
+                     str[i + 4] == '-' && str[i + 5] == ' ')
             {
                 output += "v";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == ' ')
             {
                 output += "w";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&str[i + 3] == '.' && str[i + 4] == '-' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&str[i + 3] == '.' &&
+                     str[i + 4] == '-' && str[i + 5] == ' ')
             {
                 output += "x";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '-' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == '-' && str[i + 5] == ' ')
             {
                 output += "y";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == ' ')
             {
                 output += "z";
             }
             //Punctuation marks
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' &&
-                     str[i + 5] == '.' && str[i + 6] == '.')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '.' && str[i + 6] == '.')
             {
                 output += ".";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '-' &&
-                     str[i + 5] == '.' && str[i + 6] == '-')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '-' && str[i + 5] == '.' && str[i + 6] == '-')
             {
                 output += ",";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' &&
-                     str[i + 4] == '.' && str[i + 5] == '-')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' &&  str[i + 4] == '.' && str[i + 5] == '-')
             {
                 output += "-";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '-' &&
-                     str[i + 5] == '.')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '-' && str[i + 5] == '.')
             {
                 output += "\"";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' &&
-                     str[i + 5] == '-' && str[i + 6] == '.')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == '-' && str[i + 6] == '.')
             {
                 output += ";";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '.' &&
-                     str[i + 5] == '.' && str[i + 6] == '.')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == '.' && str[i + 5] == '.' && str[i + 6] == '.')
             {
                 output += ":";
             }
-            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' && str[i + 4] == '-' &&
-                     str[i + 5] == '-' && str[i + 6] == '.')
+            else if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == '-' &&
+                     str[i + 4] == '-' && str[i + 5] == '-' && str[i + 6] == '.')
             {
                 output += "\'";
             }
-            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' && str[i + 4] == '.' &&
-                     str[i + 5] == '-' && str[i + 6] == '-')
+            else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '-' && str[i + 3] == '.' &&
+                     str[i + 4] == '.' && str[i + 5] == '-' && str[i + 6] == '-')
             {
                 output += "!";
             }
             else if (str[i] == ' ' && str[i + 1] == ' ')
             {
                 output += " ";
+            }
+
+            for (size_t i = 0; i < str.length(); ++i)
+            {
+                const QString temp = " ";
+
+                if (str[i] == '\0')
+                {
+                    str += temp;
+                }
             }
         }
     }

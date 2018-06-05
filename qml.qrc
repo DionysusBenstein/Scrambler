@@ -12,5 +12,6 @@
         <file>Settings.qml</file>
         <file>About.qml</file>
         <file>Morse.qml</file>
+        <file>MoreIcon.qml</file>
     </qresource>
 </RCC>

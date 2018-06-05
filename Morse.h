@@ -29,7 +29,7 @@ public:
     Q_INVOKABLE QString encrypt(const QString str);
 
     //Метод для дешифрования текста
-    Q_INVOKABLE QString decrypt(const QString str);
+    Q_INVOKABLE QString decrypt( QString str);
 
     //Метод проверки на то, что находится в строке
     Q_INVOKABLE bool isMorse(const QString str);

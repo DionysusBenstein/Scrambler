@@ -82,12 +82,32 @@ ApplicationWindow {
             }
 
             ToolButton {
-
                 anchors.centerIn: parent
-                scale: /*Qt.platform.os == "android" ?*/ dp(3.1) /*: dp(1.18)*/
+                scale: dp(3.1)
                 onClicked: nav.toggle()
             }
         }
+
+//        Item {
+//            id: moreItem
+//            width: dp(56)
+//            height: dp(56)
+//            anchors.top: parent.top
+//            anchors.right: parent.right
+//            clip: true
+
+//            MoreIcon {
+//                id: moreIcon
+//                anchors.top: parent.top
+//                anchors.left: parent.left
+//                anchors.margins: dp(17)
+//            }
+
+//            ToolButton {
+//                anchors.centerIn: parent
+//                scale: dp(3.1)
+//            }
+//        }
     }
 
     //Loader для смены Фрагментов
@@ -258,4 +278,3 @@ ApplicationWindow {
         }
     }
 }
-
