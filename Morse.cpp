@@ -427,11 +427,13 @@ QString Morse::decrypt(const QString str)
         {
             output += "a";
         }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&
+                 str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
         {
             output += "b";
         }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&
+                 str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
         {
             output += "c";
         }
@@ -499,7 +501,7 @@ QString Morse::decrypt(const QString str)
         {
             output += "s";
         }
-        else if (str[i] == ' ' && str[i + 1] == "-" && str[i + 2] == ' ') //////////////////////////////////////////
+        else if (str[i] == ' ' && str[i + 1] == "-" && str[i + 2] == ' ')
         {
             output += "t";
         }

@@ -16,7 +16,7 @@
 #define MORSE_H
 
 #include <QObject>
-#include <QMap>
+//#include <QMap>
 
 class Morse : public QObject
 {
