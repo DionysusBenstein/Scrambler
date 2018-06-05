@@ -30,7 +30,7 @@ ApplicationWindow {
     width:  360
     height: 568
 
-    title: qsTr("Scrambler v0.1.0-alpha1")
+    title: qsTr("Scrambler v0.2.4")
 
     readonly property int dpi: Screen.pixelDensity * 25.4
 
@@ -160,12 +160,12 @@ ApplicationWindow {
 
         ListElement {fragment: qsTr("Шифр Цезаря")}
         ListElement {fragment: qsTr("Шифр Вернама")}
-        ListElement { fragment: qsTr("Шифр Виженера")}
+        ListElement {fragment: qsTr("Шифр Виженера")}
         ListElement {fragment: qsTr("Шифр Гронсфельда")}
         ListElement {fragment: qsTr("Азбука Морзе")}
         ListElement {fragment: qsTr("Алгоритм Энигмы")}
-        ListElement { fragment: qsTr("Настройки")}
-        ListElement { fragment: qsTr("О программе")}
+        ListElement {fragment: qsTr("Настройки")}
+        ListElement {fragment: qsTr("О программе")}
         ListElement {fragment: qsTr("Выход")}
     }
 
