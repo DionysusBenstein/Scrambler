@@ -110,9 +110,9 @@ Item {
         id: textField
         placeholderText: "Введите текст..."
         anchors.right: parent.right
-        anchors.rightMargin: dp(15)
+        anchors.rightMargin: dp(25)
         anchors.left: parent.left
-        anchors.leftMargin: dp(15)
+        anchors.leftMargin: dp(25)
         anchors.top: parent.top
         anchors.topMargin: dp(49)
         renderType: Text.QtRendering

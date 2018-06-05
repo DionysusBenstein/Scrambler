@@ -423,17 +423,22 @@ QString Morse::decrypt(const QString str)
     for (size_t i = 0; i < str.length(); ++i)
     {
         //Letters
-        if (str[i] == ' ' && str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
+        if (str[i + 1] == '.' && str[i + 2] == '-' && str[i + 3] == ' ')
         {
-            output += "a";
+            if (str[i] == ' ' && i != 0)
+            {
+                output += 'a';
+            }
+            else if(i == 0)
+            {
+                output += 'a';
+            }
         }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&
-                 str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
+        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '.' && str[i + 4] == '.' && str[i + 5] == ' ')
         {
             output += "b";
         }
-        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' &&
-                 str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
+        else if (str[i] == ' ' && str[i + 1] == '-' && str[i + 2] == '.' && str[i + 3] == '-' && str[i + 4] == '.' && str[i + 5] == ' ')
         {
             output += "c";
         }
@@ -561,6 +566,10 @@ QString Morse::decrypt(const QString str)
         else if (str[i] == "--..--" && str[i + 1] == ' ')
         {
             output += "!";
+        }
+        else if (str[i] == ' ' && str[i + 1] == ' ')
+        {
+            output += " ";
         }
     }
     return output;
