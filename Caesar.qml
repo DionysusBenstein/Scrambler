@@ -151,6 +151,7 @@ Item {
         anchors.bottomMargin: dp(15)
         anchors.right: parent.right
         anchors.rightMargin: dp(4)
+        editable: true
     }
 
     Pane {
