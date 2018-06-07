@@ -32,17 +32,11 @@ ApplicationWindow {
 
     title: qsTr("Scrambler v1.3.0")
 
-    readonly property int dpi: Screen.pixelDensity * 25.4
-
-    function dp(x) {
-        return (dpi < 120) ? x : x * (dpi/160)
-    }
-
     //AppBar
     ToolBar {
         id: appBar
-        height: dp(56)
-        spacing: dp(25)
+        height: 56
+        spacing: 25
         font.family: "Roboto"
         anchors.top: parent.top
         anchors.left: parent.left
@@ -58,18 +52,18 @@ ApplicationWindow {
                 id: headerText
                 text: qsTr("Шифр Цезаря")
                 font.family: "Roboto Medium"
-                font.pointSize: dp(15)
+                font.pointSize: 15
                 color: "white"
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
-                anchors.margins: dp(72)
+                anchors.margins: 72
             }
         }
 
         Item {
             id: menuItem
-            width: dp(56)
-            height: dp(56)
+            width: 56
+            height: 56
             anchors.top: parent.top
             anchors.left: parent.left
             clip: true
@@ -78,12 +72,12 @@ ApplicationWindow {
                 id: menuBackIcon
                 anchors.top: parent.top
                 anchors.left: parent.left
-                anchors.margins: dp(17)
+                anchors.margins: 17
             }
 
             ToolButton {
                 anchors.centerIn: parent
-                scale: dp(3.1)
+                scale: 3.1
                 onClicked: nav.toggle()
             }
         }
@@ -201,7 +195,7 @@ ApplicationWindow {
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                width: dp(1)
+                width: 1
 
                 //Визуализация области свайпа
                 //Rectangle {
@@ -223,7 +217,7 @@ ApplicationWindow {
 
                     delegate: ItemDelegate {
                         id: itemDelegate
-                        height: dp(48)
+                        height: 48
                         anchors.left: parent.left
                         anchors.right: parent.right
 
@@ -232,8 +226,8 @@ ApplicationWindow {
                             font.family: "Roboto"
                             anchors.fill: parent
                             anchors.left: itemIcon.right
-                            anchors.leftMargin: dp(72)
-                            font.pixelSize: dp(14)
+                            anchors.leftMargin: 72
+                            font.pixelSize: 14
 
                             renderType: Text.NativeRendering
                             horizontalAlignment: Text.AlignLeft
@@ -242,13 +236,13 @@ ApplicationWindow {
 
                         Rectangle {
                             id: itemIcon
-                            width: dp(18)
-                            height: dp(18)
+                            width: 18
+                            height: 18
                             color: "#4285f4"
                             anchors.left: parent.left
-                            anchors.leftMargin: dp(16)
+                            anchors.leftMargin: 16
                             anchors.verticalCenter: parent.verticalCenter
-                            radius: dp(9)
+                            radius: 9
                         }
 
                         //По нажатию на пункт меню заменяем компонент в Loader
@@ -267,7 +261,7 @@ ApplicationWindow {
                 anchors.top: parent.top
                 anchors.left: parent.left
                 anchors.right: parent.right
-                height: dp(148)
+                height: 148
 
                 Image {
                     id: drawerTopBackground

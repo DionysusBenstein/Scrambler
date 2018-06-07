@@ -48,7 +48,7 @@ Rectangle {
     readonly property int _maximumX: _rightEdge ? _rootItem.width : 0
     readonly property int _pullThreshold: panel.width/2
     readonly property int _slideDuration: 260
-    readonly property int _openMarginSize: dp(20)
+    readonly property int _openMarginSize: 20
 
     property real _velocity: 0
     property real _oldMouseX: -1
@@ -58,7 +58,7 @@ Rectangle {
     on_RightEdgeChanged: _setupAnchors()
     onOpenChanged: completeSlideDirection()
 
-    width: (Screen.width > Screen.height) ? dp(320) : Screen.width - dp(56)
+    width: (Screen.width > Screen.height) ? 320 : Screen.width - 56
     height: parent.height
     x: _closeX
     z: 10
@@ -95,7 +95,7 @@ Rectangle {
     }
 
     function handleRelease() {
-        var velocityThreshold = dp(5)
+        var velocityThreshold = 5
         if ((_rightEdge && _velocity > velocityThreshold) ||
                 (!_rightEdge && _velocity < -velocityThreshold)) {
             panel.open = false;
@@ -186,11 +186,11 @@ Rectangle {
     Item {
         id: shadow
         anchors.left: panel.right
-        anchors.leftMargin: _rightEdge ? 0 : dp(10)
+        anchors.leftMargin: _rightEdge ? 0 : 10
         height: parent.height
 
         Rectangle {
-            height: dp(10)
+            height: 10
             width: panel.height
             rotation: 90
             opacity: Math.min(1, Math.abs(panel.x - _closeX)/ _openMarginSize)
