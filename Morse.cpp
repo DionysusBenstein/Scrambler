@@ -19,7 +19,10 @@ Morse::Morse(QObject *parent) : QObject(parent){}
 //Метод для шифрования текста
 QString Morse::encrypt(const QString str)
 {
+    QString output;
 
+
+    return output;
 }
 
 //Метод для дешифрования текста

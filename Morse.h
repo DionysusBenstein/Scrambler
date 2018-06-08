@@ -16,7 +16,7 @@
 #define MORSE_H
 
 #include <QObject>
-//#include <QMap>
+#include <QMap>
 
 class Morse : public QObject
 {
@@ -36,7 +36,6 @@ public:
 
 private:
 
-    /*
     QMap <char, QString> morse = {
             { 'a', ".-"},
             { 'b', "-..."},
@@ -88,7 +87,6 @@ private:
             { ' ', "-...-"},
             { '@', ".--.-."},
     };
-    */
 };
 
 #endif //MORSE_H
