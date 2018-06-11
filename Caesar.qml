@@ -17,8 +17,8 @@ import QtQuick.Window 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
-import com.company.caesar 1.0
-import com.company.clipboard 1.0
+import com.benstein.caesar 1.0
+import com.benstein.clipboard 1.0
 
 
 
@@ -99,9 +99,8 @@ Item {
     //        }
     //    }
 
-    Caesar {
-        id: caesarBackEnd
-    }
+    Caesar { id: caesarBackEnd }
+    Clipboard { id: clipboard }
 
     TextField {
         id: textField
@@ -124,7 +123,6 @@ Item {
         anchors.leftMargin: 13
         anchors.top: textField.bottom
         anchors.topMargin: 1
-        onClicked: translateButton.text = "Зашифровать"
     }
 
     RadioButton {
@@ -136,7 +134,6 @@ Item {
         anchors.leftMargin: 13
         anchors.top: encryptRadioButton.bottom
         anchors.topMargin: -4
-        onClicked: translateButton.text = "Расшифровать"
     }
 
     SpinBox {
@@ -204,5 +201,6 @@ Item {
         anchors.right: pane.right
         flat: true
         Material.foreground: "#4285f4"
+        onClicked: clipboard.copy(outoutLabel.text)
     }
 }

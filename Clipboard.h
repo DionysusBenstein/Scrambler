@@ -17,6 +17,7 @@
 
 #include <QObject>
 #include <QClipboard>
+#include <QApplication>
 
 class Clipboard : public QObject
 {
@@ -24,7 +25,7 @@ class Clipboard : public QObject
 public:
     explicit Clipboard(QObject *parent = nullptr);
     //Метод для копирования текста
-    Q_INVOKABLE void copy(const QString str) const;
+    Q_INVOKABLE void copy(const QString str);
 
 private:
     QClipboard *clipboard;

@@ -16,8 +16,8 @@
 
 Clipboard::Clipboard(QObject *parent) : QObject(parent){}
 
-void Clipboard::copy(const QString str) const
+void Clipboard::copy(const QString str)
 {
-//    clipboard = QApplication::clipboard();
-//    clipboard->setText(str);
+    clipboard = QApplication::clipboard();
+    clipboard->setText(str);
 }

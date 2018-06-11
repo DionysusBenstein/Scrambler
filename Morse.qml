@@ -18,8 +18,8 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
-import com.company.morse 1.0
-import com.company.clipboard 1.0
+import com.benstein.morse 1.0
+import com.benstein.clipboard 1.0
 
 //   Colors
 //Main:  #3f51b5
@@ -172,7 +172,7 @@ Item {
         flat: true
         Material.foreground: "#3f51b5"
 
-        //onClicked: clipboard.copy(outputLabel.text)
+        onClicked: clipboard.copy(outputLabel.text)
     }
 }
 

@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<Caesar>("com.company.caesar", 1, 0, "Caesar");
-    qmlRegisterType<Morse>("com.company.morse", 1, 0, "Morse");
-    qmlRegisterType<Clipboard>("com.company.clipboard", 1, 0, "Clipboard");
+    qmlRegisterType<Caesar>("com.benstein.caesar", 1, 0, "Caesar");
+    qmlRegisterType<Morse>("com.benstein.morse", 1, 0, "Morse");
+    qmlRegisterType<Clipboard>("com.benstein.clipboard", 1, 0, "Clipboard");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
