@@ -39,18 +39,38 @@ QString Morse::encrypt(QString str) const
 QString Morse::decrypt(QString str)
 {
     QString output;
+    QString temp;
 
-    QMap<QChar, QString>::iterator i = find_value(morse.begin(), morse.end(), str);
-
-    if (i != morse.end())
+    for (int i = 0; i < str.length(); ++i)
     {
-        output += i.key();
-    }
+        for (int j = 0; j < str.length(); ++j)
+        {
+            temp += str[i];
 
+            if (temp[j] == ' ')
+            {
+                QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), temp);
+
+                if (it != morse.end())
+                {
+                    output += it.key();
+                }
+
+                temp = "";
+            }
+        }
+
+//        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
+
+//        if (it != morse.end())
+//        {
+//            output += it.key();
+//        }
+    }
     return output;
 }
 
-//Метод проверки на то, что находится в строке
+//Метод проверки текста, что находится в строке
 bool Morse::isMorse(QString str) const
 {
     return true;
