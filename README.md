@@ -1,4 +1,4 @@
-:phone: A program that encrypts text using various algorithms.
+:smartphone: A program that encrypts text using various algorithms.
 
 v0.1:
 
