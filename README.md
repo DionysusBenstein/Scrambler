@@ -1,4 +1,4 @@
-:computer: A program that encrypts text using various algorithms.
+:phone: A program that encrypts text using various algorithms.
 
 v0.1:
 
