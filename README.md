@@ -1,4 +1,4 @@
-A program that encrypts text using various algorithms.
+:computer: A program that encrypts text using various algorithms.
 
 v0.1:
 
