@@ -39,7 +39,6 @@ QString Morse::encrypt(QString str) const
 QString Morse::decrypt(QString str)
 {
     QString output;
-    QString temp;
 
     for (int i = 0; i < str.length(); ++i)
     {
