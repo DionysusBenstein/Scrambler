@@ -43,24 +43,12 @@ QString Morse::decrypt(QString str)
 
     for (int i = 0; i < str.length(); ++i)
     {
-
-        while (str[i] != ' ')
-        {
-            temp += str[i];
-        }
-
-        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), temp);
+        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
 
         if (it != morse.end())
         {
             output += it.key();
         }
-        //        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
-
-        //        if (it != morse.end())
-        //        {
-        //            output += it.key();
-        //        }
     }
     return output;
 }
