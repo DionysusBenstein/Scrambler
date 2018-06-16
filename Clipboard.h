@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Clipboard.cpp                               */
+/* Original File Name: Clipboard.h                                 */
 
 /* Date: 03-06-2018                                                */
 
