@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Morse.cpp                                   */
+/* Original File Name: Morse.h                                     */
 
 /* Date: 03-06-2018                                                */
 
