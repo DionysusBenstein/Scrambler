@@ -115,17 +115,9 @@ QString Morse::decrypt(QString str)
 
     while ((next = str.contains(delim, prev)))
     {
-        //Отладка-start
-        QString tmp = str.mid(prev, next - prev);
-        //output += tmp;
-        //Отладка-end
         arr.push_back(str.mid(prev, next - prev));
         prev = next + delta;
     }
-    //Отладка-start
-    QString tmp = str.mid(prev);
-    //output += tmp;
-    //Отладка-end
     arr.push_back(str.mid(prev));
 
     foreach (auto i, arr)
