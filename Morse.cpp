@@ -97,32 +97,16 @@ QString Morse::decrypt(QString str)
 {
     QString output;
 
-//    for (int i = 0; i < str.length(); ++i)
-//    {
-//        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
+    QStringList strList = str.split(' ');
 
-//        if (it != morse.end())
-//        {
-//            output += it.key();
-//        }
-//    }
-
-    QVector<QString> arr;
-    QString delim(" ");
-    int prev = 0;
-    int next;
-    int delta = delim.length();
-
-    while ((next = str.contains(delim, prev)))
+    for (int i = 0; i < strList.size(); ++i)
     {
-        arr.push_back(str.mid(prev, next - prev));
-        prev = next + delta;
-    }
-    arr.push_back(str.mid(prev));
+        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), strList[i]);
 
-    foreach (auto i, arr)
-    {
-        output += i;
+        if (it != morse.end())
+        {
+            output += it.key();
+        }
     }
 
     return output;
