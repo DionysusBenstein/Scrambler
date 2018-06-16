@@ -97,20 +97,47 @@ QString Morse::decrypt(QString str)
 {
     QString output;
 
-    for (int i = 0; i < str.length(); ++i)
-    {
-        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
+//    for (int i = 0; i < str.length(); ++i)
+//    {
+//        QMap<QChar, QString>::iterator it = find_value(morse.begin(), morse.end(), str);
 
-        if (it != morse.end())
-        {
-            output += it.key();
-        }
+//        if (it != morse.end())
+//        {
+//            output += it.key();
+//        }
+//    }
+
+    QVector<QString> arr;
+    QString delim(" ");
+    int prev = 0;
+    int next;
+    int delta = delim.length();
+
+    while ((next = str.contains(delim, prev)))
+    {
+        //Отладка-start
+        QString tmp = str.mid(prev, next - prev);
+        //output += tmp;
+        //Отладка-end
+        arr.push_back(str.mid(prev, next - prev));
+        prev = next + delta;
     }
+    //Отладка-start
+    QString tmp = str.mid(prev);
+    //output += tmp;
+    //Отладка-end
+    arr.push_back(str.mid(prev));
+
+    foreach (auto i, arr)
+    {
+        output += i;
+    }
+
     return output;
 }
 
 //Метод проверки текста, что находится в строке
 bool Morse::isMorse(QString str) const
 {
-    return false;
+    return true;
 }
