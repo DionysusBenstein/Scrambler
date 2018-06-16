@@ -28,13 +28,13 @@ public:
     Q_INVOKABLE QString decrypt(const QString str,const  int key) const;
 
 private:
-    //Инициализация строк с алфавитом, знаками и цифрами
-    QString high_en_alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    QString low_en_alph = "abcdefghijklmnopqrstuvwxyz";
-    QString high_ru_alph = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    QString low_ru_alph = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    QString signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
-    QString numbers = "0123456789";
+    //Объявление строк с алфавитом, знаками и цифрами
+    QString high_en_alph;
+    QString low_en_alph;
+    QString high_ru_alph;
+    QString low_ru_alph;
+    QString signs;
+    QString numbers;
 };
 
 #endif // CAESAR_H

@@ -16,7 +16,12 @@
 
 Caesar::Caesar(QObject *parent) : QObject(parent)
 {
-    //
+    high_en_alph  =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    low_en_alph   =  "abcdefghijklmnopqrstuvwxyz";
+    high_ru_alph  =  "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    low_ru_alph   =  "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    signs         =  "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
+    numbers       =  "0123456789";
 }
 
 //Метод шифрования текста
