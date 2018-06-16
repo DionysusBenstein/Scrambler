@@ -45,7 +45,7 @@ public:
     Q_INVOKABLE QString decrypt(const QString str);
 
     //Метод проверки на то, что находится в строке
-    Q_INVOKABLE bool isMorse(const QString str) const;
+    Q_INVOKABLE bool isMorse(/*QString str*/) const;
 
 private:
     QMap <QChar, QString> morse;

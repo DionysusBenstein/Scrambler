@@ -96,7 +96,8 @@ QString Morse::encrypt(QString str) const
 QString Morse::decrypt(const QString str)
 {
     QString output;
-    QStringList strList = str.split(' '); //Разделение строки на слова
+
+    QStringList strList = str.split(' '); //Разделение строки на слова через пробел
 
     for (int i = 0; i < strList.size(); ++i)
     {
@@ -112,7 +113,7 @@ QString Morse::decrypt(const QString str)
 }
 
 //Метод проверки текста, что находится в строке
-bool Morse::isMorse(QString str) const
+bool Morse::isMorse(/*QString str*/) const
 {
     return true;
 }
