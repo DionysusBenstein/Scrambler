@@ -28,7 +28,7 @@ QString Morse::encrypt(QString str) const
         if (morse.find(str[i]) != morse.end()) {
             output += morse.find(str[i]).value() + ' ';
         } else {
-            output += "?";
+            output += "? ";
         }
     }
 
@@ -55,5 +55,5 @@ QString Morse::decrypt(QString str)
 //Метод проверки текста, что находится в строке
 bool Morse::isMorse(QString str) const
 {
-    return true;
+    return false;
 }

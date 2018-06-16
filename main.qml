@@ -84,8 +84,8 @@ ApplicationWindow {
 
 //        Item {
 //            id: moreItem
-//            width: dp(56)
-//            height: dp(56)
+//            width: 56
+//            height: 56
 //            anchors.top: parent.top
 //            anchors.right: parent.right
 //            clip: true
@@ -94,12 +94,12 @@ ApplicationWindow {
 //                id: moreIcon
 //                anchors.top: parent.top
 //                anchors.left: parent.left
-//                anchors.margins: dp(17)
+//                anchors.margins: 17
 //            }
 
 //            ToolButton {
 //                anchors.centerIn: parent
-//                scale: dp(3.1)
+//                scale: 3.1
 //            }
 //        }
     }

@@ -26,12 +26,6 @@ import QtQuick.Controls.Material 2.3
 Item {
     anchors.fill: parent
 
-    readonly property int dpi: Screen.pixelDensity * 25.4
-
-    function dp(x) {
-        return (dpi < 120) ? x : x*(dpi/160)
-    }
-
     Material.accent: "#e91e63"
 
     Text {
@@ -40,9 +34,9 @@ Item {
         color: "#191919"
         anchors.top: parent.top
         anchors.left: parent.left
-        anchors.leftMargin: dp(20)
-        anchors.topMargin: dp(70)
-        font.pixelSize: dp(30)
+        anchors.leftMargin: 20
+        anchors.topMargin: 70
+        font.pixelSize: 30
         font.family: "Roboto"
 
         renderType: Text.NativeRendering
@@ -56,7 +50,7 @@ Item {
         radius: width / 2
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.margins: dp(30)
+        anchors.margins: 30
 
         Rectangle {
             id: child

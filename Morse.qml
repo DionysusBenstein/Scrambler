@@ -29,12 +29,6 @@ import com.benstein.clipboard 1.0
 Item {
     anchors.fill: parent
 
-    readonly property int dpi: Screen.pixelDensity * 25.4
-
-    function dp(x) {
-        return (dpi < 120) ? x : x*(dpi/160)
-    }
-
     Material.accent: "#3f51b5"
 
 //    Text {
@@ -43,8 +37,8 @@ Item {
 //        color: "#191919"
 //        anchors.top: parent.top
 //        anchors.left: parent.left
-//        anchors.margins: dp(20)
-//        font.pixelSize: dp(30)
+//        anchors.margins: 20
+//        font.pixelSize: 30
 //        font.family: "Roboto"
 
 //        renderType: Text.NativeRendering
@@ -58,7 +52,7 @@ Item {
 //        radius: width / 2
 //        anchors.right: parent.right
 //        anchors.top: parent.top
-//        anchors.margins: dp(30)
+//        anchors.margins: 30
 
 //        Rectangle {
 //            id: child
@@ -110,64 +104,64 @@ Item {
         id: textField
         placeholderText: "Введите текст..."
         anchors.right: parent.right
-        anchors.rightMargin: dp(25)
+        anchors.rightMargin: 25
         anchors.left: parent.left
-        anchors.leftMargin: dp(25)
+        anchors.leftMargin: 25
         anchors.top: parent.top
-        anchors.topMargin: dp(49)
+        anchors.topMargin: 49
         renderType: Text.QtRendering
     }
 
     Pane {
         id: pane
-        width: dp(280)
-        height: dp(248)
-        font.pointSize: dp(20)
+        width: 280
+        height: 248
+        font.pointSize: 20
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: dp(36)
+        anchors.bottomMargin: 36
         anchors.horizontalCenter: parent.horizontalCenter
-        Material.elevation: dp(30)
+        Material.elevation: 30
 
         Label {
             id: label
             color: "#404040"
             text: qsTr("Шифр")
-            font.pointSize: dp(15)
+            font.pointSize: 15
             font.family: "Roboto Medium"
             anchors.top: parent.top
-            anchors.topMargin: dp(7)
+            anchors.topMargin: 7
             anchors.left: parent.left
-            anchors.leftMargin: dp(12)
+            anchors.leftMargin: 12
         }
 
         Label {
             id: outputLabel
-            x: dp(12)
-            width: dp(244)
-            height: dp(146)
+            x: 12
+            width: 244
+            height: 146
             color: "#9a9a9a"
             text: {
                 morse.isMorse(textField.text) ? morse.decrypt(textField.text) : morse.encrypt(textField.text)
             }
-            font.pixelSize: dp(20);
+            font.pixelSize: 20;
             antialiasing: true
             smooth: true
             anchors.top: label.bottom
-            anchors.topMargin: dp(17)
-            font.pointSize: dp(12)
+            anchors.topMargin: 17
+            font.pointSize: 12
             fontSizeMode: Text.Fit
         }
     }
 
     Button {
         id: copyButton
-        x: dp(220)
-        y: dp(9)
+        x: 220
+        y: 9
         text: qsTr("Скопировать")
         anchors.bottom: pane.bottom
-        anchors.bottomMargin: dp(1)
-        anchors.rightMargin: dp(14)
-        anchors.topMargin: dp(-53)
+        anchors.bottomMargin: 1
+        anchors.rightMargin: 14
+        anchors.topMargin: -53
         anchors.right: pane.right
         flat: true
         Material.foreground: "#3f51b5"

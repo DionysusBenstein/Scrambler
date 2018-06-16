@@ -26,12 +26,6 @@ import QtQuick.Controls.Material 2.3
 Item {
     anchors.fill: parent
 
-    readonly property int dpi: Screen.pixelDensity * 25.4
-
-    function dp(x) {
-        return (dpi < 120) ? x : x*(dpi/160)
-    }
-
     Material.accent: "#4285f4"
 
     Text {

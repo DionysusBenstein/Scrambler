@@ -39,8 +39,8 @@ Item {
     //        color: "#191919"
     //        anchors.top: parent.top
     //        anchors.left: parent.left
-    //        anchors.margins: dp(20)
-    //        font.pixelSize: dp(30)
+    //        anchors.margins: 20
+    //        font.pixelSize: 30
     //        font.family: "Roboto"
 
     //        renderType: Text.NativeRendering
@@ -54,7 +54,7 @@ Item {
     //        radius: width / 2
     //        anchors.right: parent.right
     //        anchors.top: parent.top
-    //        anchors.margins: dp(30)
+    //        anchors.margins: 30
 
     //        Rectangle {
     //            id: child
