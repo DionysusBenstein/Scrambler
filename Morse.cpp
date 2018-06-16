@@ -93,11 +93,10 @@ QString Morse::encrypt(QString str) const
 }
 
 //Метод для дешифрования текста
-QString Morse::decrypt(QString str)
+QString Morse::decrypt(const QString str)
 {
     QString output;
-
-    QStringList strList = str.split(' ');
+    QStringList strList = str.split(' '); //Разделение строки на слова
 
     for (int i = 0; i < strList.size(); ++i)
     {

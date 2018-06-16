@@ -30,7 +30,7 @@ ApplicationWindow {
     width:  360
     height: 568
 
-    title: qsTr("Scrambler v1.3.0")
+    title: qsTr("Scrambler v1.5.4")
 
     //AppBar
     ToolBar {
