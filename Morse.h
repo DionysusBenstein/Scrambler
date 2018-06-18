@@ -25,7 +25,7 @@ public:
     explicit Morse(QObject *parent = nullptr);
 
     //Метод поиска map-ключа по значению
-    template<typename Iterator, typename Value>
+    template<class Iterator, class Value>
     Iterator find_value(Iterator begin, Iterator end, const Value& value)
     {
         while (begin != end)
