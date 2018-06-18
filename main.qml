@@ -173,12 +173,12 @@ ApplicationWindow {
         id: navModel
 
         ListElement {fragment: qsTr("Шифр Цезаря")}
-        ListElement {fragment: qsTr("Шифр Вернама")}
-        ListElement {fragment: qsTr("Шифр Виженера")}
-        ListElement {fragment: qsTr("Шифр Гронсфельда")}
+        //ListElement {fragment: qsTr("Шифр Вернама")}
+        //ListElement {fragment: qsTr("Шифр Виженера")}
+        //ListElement {fragment: qsTr("Шифр Гронсфельда")}
         ListElement {fragment: qsTr("Азбука Морзе")}
-        ListElement {fragment: qsTr("Алгоритм Энигмы")}
-        ListElement {fragment: qsTr("Настройки")}
+        //ListElement {fragment: qsTr("Алгоритм Энигмы")}
+        //ListElement {fragment: qsTr("Настройки")}
         ListElement {fragment: qsTr("О программе")}
         ListElement {fragment: qsTr("Выход")}
     }
