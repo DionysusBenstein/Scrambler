@@ -36,3 +36,5 @@ HEADERS += \
     Caesar.h \
     Morse.h \
     Clipboard.h
+
+RC_FILE = images/icons/icons.rc
