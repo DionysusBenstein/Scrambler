@@ -121,42 +121,42 @@ ApplicationWindow {
                     appBarRect.color = "#4285f4"
                     headerText.text = "Шифр Цезаря"
                     break;
+//                case 1:
+//                    loader.source = "Vernam.qml"
+//                    appBarRect.color = "#e91e63"
+//                    headerText.text = "Шифр Вернама"
+//                    break;
+//                case 2:
+//                    loader.source = "Vigenere.qml"
+//                    appBarRect.color = "#f44336"
+//                    headerText.text = "Шифр Виженера"
+//                    break;
+//                case 3:
+//                    loader.source = "Gronsfeld.qml"
+//                    appBarRect.color = "#673ab7"
+//                    headerText.text = "Шифр Гронсфельда"
+//                    break;
                 case 1:
-                    loader.source = "Vernam.qml"
-                    appBarRect.color = "#e91e63"
-                    headerText.text = "Шифр Вернама"
-                    break;
-                case 2:
-                    loader.source = "Vigenere.qml"
-                    appBarRect.color = "#f44336"
-                    headerText.text = "Шифр Виженера"
-                    break;
-                case 3:
-                    loader.source = "Gronsfeld.qml"
-                    appBarRect.color = "#673ab7"
-                    headerText.text = "Шифр Гронсфельда"
-                    break;
-                case 4:
                     loader.source = "Morse.qml"
                     appBarRect.color = "#3f51b5"
                     headerText.text = "Азбука Морзе"
                     break;
-                case 5:
-                    loader.source = "Enigma.qml"
-                    appBarRect.color = "#9c27b0"
-                    headerText.text = "Алгоритм Энигмы"
-                    break;
-                case 6:
-                    loader.source = "Settings.qml"
-                    headerText.text = "Настройки"
-                    appBarRect.color = "#424242"
-                    break;
-                case 7:
+//                case 5:
+//                    loader.source = "Enigma.qml"
+//                    appBarRect.color = "#9c27b0"
+//                    headerText.text = "Алгоритм Энигмы"
+//                    break;
+//                case 6:
+//                    loader.source = "Settings.qml"
+//                    headerText.text = "Настройки"
+//                    appBarRect.color = "#424242"
+//                    break;
+                case 2:
                     loader.source = "About.qml"
                     appBarRect.color = "#4c00d5"
                     headerText.text = "О программе"
                     break;
-                case 8:
+                case 3:
                     close()
                     break;
                 default:
