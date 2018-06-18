@@ -95,7 +95,19 @@ Item {
 //        }
 //    }
 
+    Image {
+        id: appIcon
+        source: "images/icons/Scrambler.svg"
+        //anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.top: parent.top
+        scale: 0.3
 
+//        Rectangle {
+//            color: "red"
+//            anchors.fill: parent
+//        }
+
+    }
 }
 
 
