@@ -153,7 +153,7 @@ ApplicationWindow {
                 //                    break;
             case 2:
                 loader.source = "About.qml"
-                appBarRect.color = "#4c00d5"
+                appBarRect.color = "#ff9269"
                 headerText.text = "О программе"
                 break;
             case 3:
