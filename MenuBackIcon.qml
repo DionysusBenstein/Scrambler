@@ -25,7 +25,7 @@ Item {
         y: 5
         width: 18
         height: 2
-        antialiasing: true
+        //antialiasing: true //Enable when the animation is active
     }
 
     Rectangle {
@@ -34,7 +34,7 @@ Item {
         y: 10
         width: 18
         height: 2
-        antialiasing: true
+        //antialiasing: true //Enable when the animation is active
     }
 
     Rectangle {
@@ -43,7 +43,7 @@ Item {
         y: 15
         width: 18
         height: 2
-        antialiasing: true
+        //antialiasing: true //Enable when the animation is active
     }
 
     property int animationDuration: 350

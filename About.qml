@@ -121,7 +121,7 @@ Item {
             Text {
                 text: "Scrambler"
                 font.family: "Roboto Medium"
-                font.pointSize: 15
+                font.pointSize: 16
                 color: "#fc744e"
             }
         }
