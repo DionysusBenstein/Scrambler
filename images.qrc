@@ -7,5 +7,6 @@
         <file>images/icons/Scrambler-64px-Desktop.ico</file>
         <file>images/icons/Scrambler-64px-Desktop.png</file>
         <file>images/icons/Scrambler-512px-Desktop.png</file>
+        <file>images/icons/aboutProjectIcon.png</file>
     </qresource>
 </RCC>

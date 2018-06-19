@@ -162,12 +162,51 @@ Item {
 //    }
 
     Rectangle {
+        id: divider
         height: 56
         anchors.left: parent.left
         anchors.right: parent.right
         color: "#fc744e"
         anchors.top: appInfo.bottom
         anchors.topMargin: 21
+
+        Image {
+            id: aboutProjectIcon
+            source: "/images/icons/aboutProjectIcon.png"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 19
+        }
+
+            Text {
+                text: qsTr("О проекте:")
+                font.family: "Roboto Medium"
+                font.pointSize: 13
+                color: "white"
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: aboutProjectIcon.right
+                anchors.leftMargin: 9.5
+            }
+
+    }
+
+    Item {
+        anchors.left: parent.left
+        anchors.leftMargin: 19
+        anchors.right: parent.left
+        anchors.rightMargin: 19
+        anchors.top: divider.bottom
+        anchors.topMargin: 21
+        anchors.bottom: parent.bottom
+        clip: true
+
+        Text {
+            text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст различными алгоритмами шифрования.")
+            font.family: "Roboto Medium"
+            font.pointSize: 11
+            color: "white"
+
+        }
     }
 }
 

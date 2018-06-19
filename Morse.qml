@@ -121,6 +121,7 @@ Item {
         anchors.bottomMargin: 36
         anchors.horizontalCenter: parent.horizontalCenter
         Material.elevation: 30
+        clip: true
 
         Label {
             id: label
