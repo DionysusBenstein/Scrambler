@@ -101,12 +101,13 @@ Item {
         color: "#ff9269"
     }
 
-    Column {
+    Grid {
         id: topColumn
-        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 20
         spacing: 10
+        rows: 2
 
         Image {
             id: appIcon
@@ -119,12 +120,23 @@ Item {
             id: appName
 
             Text {
-                text: "Scrambler"
+                text: qsTr("Scrambler")
                 font.family: "Roboto Medium"
                 font.pointSize: 16
                 color: "#fc744e"
             }
         }
+
+//        Label {
+//            id: appNameDescription
+
+//            Text {
+//                text: "Версия"
+//                font.family: "Roboto Medium"
+//                font.pointSize: 16
+//                color: "white"
+//            }
+//        }
     }
 }
 
