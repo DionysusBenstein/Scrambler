@@ -143,6 +143,7 @@ Item {
             text: {
                 morse.isMorse(textField.text) ? morse.decrypt(textField.text) : morse.encrypt(textField.text)
             }
+
             font.pixelSize: 20;
             antialiasing: true
             smooth: true

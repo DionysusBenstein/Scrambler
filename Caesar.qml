@@ -148,7 +148,7 @@ Item {
     Pane {
         id: pane
         width: 280
-        height: 220
+        height: 248
         font.pointSize: 20
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 36

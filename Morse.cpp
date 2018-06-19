@@ -115,5 +115,5 @@ QString Morse::decrypt(const QString str)
 //Метод проверки текста, что находится в строке
 bool Morse::isMorse(/*QString str*/) const
 {
-    return true;
+    return false;
 }
