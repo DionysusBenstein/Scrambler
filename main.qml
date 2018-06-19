@@ -22,13 +22,8 @@ ApplicationWindow {
     id: mainWindow
     visible: true
 
-    //Desktop resolution
-    //width:  640
-    //height: 480
-
-    //Mobile resolution
-    width:  360
-    height: 568
+    minimumWidth:  360
+    minimumHeight: 568
 
     title: qsTr("Scrambler v0.5.7-beta1")
 
