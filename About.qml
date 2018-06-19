@@ -101,19 +101,14 @@ Item {
         color: "#ff9269"
     }
 
-    Column {
-        id: topColumn
+    Image {
+        id: appIcon
+        source: "images/icons/Scrambler.svg"
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 20
-        spacing: 10
-
-        Image {
-            id: appIcon
-            source: "images/icons/Scrambler.svg"
-            width:  200
-            height: 200
-        }
+        width:  200
+        height: 200
 
         Label {
             id: appName
@@ -125,19 +120,35 @@ Item {
                 color: "#fc744e"
             }
         }
+    }
+
+    Item {
+        id: appInfo
+        width: 168
+        height: 20
+        anchors.horizontalCenter: appIcon.horizontalCenter
+        anchors.top: appIcon.bottom
+        anchors.topMargin: 10
 
         Label {
             id: appNameDescription
-            anchors.top: appIcon.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-
             Text {
-                text: qsTr("Версия  1.5.4")
+                text: qsTr("Версия: v0.5.5-beta.1")
                 font.family: "Roboto Medium"
-                font.pointSize: 15
+                font.pointSize: 13
                 color: "white"
             }
         }
+    }
+
+    Rectangle {
+        id: divider
+        color: "#fc744e"
+        height: 2
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: appInfo.bottom
+        anchors.topMargin: 21
     }
 }
 
