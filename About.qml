@@ -133,7 +133,7 @@ Item {
         Label {
             id: appNameDescription
             Text {
-                text: qsTr("Версия: v0.5.5-beta.1")
+                text: qsTr("Версия: v0.5.7-beta.1")
                 font.family: "Roboto Medium"
                 font.pointSize: 13
                 color: "white"
@@ -198,14 +198,15 @@ Item {
         anchors.top: divider.bottom
         anchors.topMargin: 21
         anchors.bottom: parent.bottom
-        clip: true
 
         Text {
+            //anchors.fill: parent
+            width: 342
+            wrapMode: Text.Wrap
             text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст различными алгоритмами шифрования.")
             font.family: "Roboto Medium"
             font.pointSize: 11
             color: "white"
-
         }
     }
 }
