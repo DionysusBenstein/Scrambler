@@ -31,72 +31,6 @@ Item {
 
     Material.accent: "#3f51b5"
 
-//    Text {
-//        id: testText
-//        text: "Тут <br> скоро <br> будет <br> азбука <br> Морзе..."
-//        color: "#191919"
-//        anchors.top: parent.top
-//        anchors.left: parent.left
-//        anchors.margins: 20
-//        font.pixelSize: 30
-//        font.family: "Roboto"
-
-//        renderType: Text.NativeRendering
-//    }
-
-//    Rectangle {
-//        id: found
-//        color: "#757de8"
-//        width: 150
-//        height: width
-//        radius: width / 2
-//        anchors.right: parent.right
-//        anchors.top: parent.top
-//        anchors.margins: 30
-
-//        Rectangle {
-//            id: child
-//            color: "#3f51b5"
-//            width: 100
-//            height: width
-//            radius: width / 2
-//            anchors.centerIn: parent
-
-//            Rectangle {
-//                id: dchild
-//                color: "#002984"
-//                width: 50
-//                height: width
-//                radius: width / 2
-//                anchors.centerIn: parent
-//            }
-//        }
-//    }
-
-//    Item {
-//        width: 150
-//        height: width
-//        anchors.centerIn: found
-
-//        Rectangle {
-//            id: moon
-//            color: "#3f51b5"
-//            width: 10
-//            height: width
-//            smooth: true
-//            antialiasing: true
-//            radius: width / 2
-//        }
-
-//        RotationAnimation on rotation {
-//            from: 0
-//            to: 360
-//            duration: 6000
-//            running: true
-//            loops: Animation.Infinite
-//        }
-//    }
-
     Morse { id: morse }
     Clipboard { id: clipboard }
 
@@ -121,7 +55,6 @@ Item {
         anchors.bottomMargin: 36
         anchors.horizontalCenter: parent.horizontalCenter
         Material.elevation: 30
-        clip: true
 
         Label {
             id: label
