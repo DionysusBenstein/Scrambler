@@ -141,12 +141,31 @@ Item {
         }
     }
 
+//    Rectangle {
+//        id: divider
+//        color: "#fc744e"
+//        height: 2
+//        anchors.left: parent.left
+//        anchors.right: parent.right
+//        anchors.top: appInfo.bottom
+//        anchors.topMargin: 21
+//    }
+
+//    Rectangle {
+//        id: divider2
+//        color: "#fc744e"
+//        height: 2
+//        anchors.left: parent.left
+//        anchors.right: parent.right
+//        anchors.top: divider.bottom
+//        anchors.topMargin: 55
+//    }
+
     Rectangle {
-        id: divider
-        color: "#fc744e"
-        height: 2
+        height: 56
         anchors.left: parent.left
         anchors.right: parent.right
+        color: "#fc744e"
         anchors.top: appInfo.bottom
         anchors.topMargin: 21
     }
