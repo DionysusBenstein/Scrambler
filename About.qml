@@ -101,13 +101,12 @@ Item {
         color: "#ff9269"
     }
 
-    Grid {
+    Column {
         id: topColumn
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 20
         spacing: 10
-        rows: 2
 
         Image {
             id: appIcon
@@ -127,16 +126,18 @@ Item {
             }
         }
 
-//        Label {
-//            id: appNameDescription
+        Label {
+            id: appNameDescription
+            anchors.top: appIcon.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
 
-//            Text {
-//                text: "Версия"
-//                font.family: "Roboto Medium"
-//                font.pointSize: 16
-//                color: "white"
-//            }
-//        }
+            Text {
+                text: qsTr("Версия  1.5.4")
+                font.family: "Roboto Medium"
+                font.pointSize: 15
+                color: "white"
+            }
+        }
     }
 }
 
