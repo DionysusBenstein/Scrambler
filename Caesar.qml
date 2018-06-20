@@ -20,8 +20,6 @@ import QtQuick.Controls.Material 2.3
 import com.benstein.caesar 1.0
 import com.benstein.clipboard 1.0
 
-
-
 //   Colors
 //Main:  #4285f4
 //Dark:  #0059c1

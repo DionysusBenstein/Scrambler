@@ -67,7 +67,7 @@ Item {
         anchors.horizontalCenter: appIcon.horizontalCenter
         anchors.top: appIcon.bottom
         anchors.topMargin: 10
-        text: qsTr("Версия: v0.5.7-beta1")
+        text: qsTr("Версия: v0.5.8-beta1")
         font.family: robotoMediumFont.name
         font.pointSize: 13
         color: "white"
@@ -115,7 +115,7 @@ Item {
             //anchors.fill: parent
             width: 342
             wrapMode: Text.Wrap
-            text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст различными алгоритмами.")
+            text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст с помощью различных алгоритмами.")
             font.family: robotoMediumFont.name
             font.pointSize: 11
             color: "white"

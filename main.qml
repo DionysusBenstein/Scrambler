@@ -30,7 +30,7 @@ ApplicationWindow {
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
     FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
 
-    title: qsTr("Scrambler v0.5.7-beta1")
+    title: qsTr("Scrambler v0.5.8-beta1")
 
     //AppBar
     ToolBar {
