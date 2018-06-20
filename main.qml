@@ -25,6 +25,8 @@ ApplicationWindow {
     minimumWidth:  360
     minimumHeight: 568
 
+    flags: Qt.FramelessWindowHint
+
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
