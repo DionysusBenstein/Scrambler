@@ -27,7 +27,7 @@ ApplicationWindow {
 
     color: "#eeeeee"
 
-    flags: Qt.FramelessWindowHint
+    //flags: Qt.FramelessWindowHint //Отключение обрамление окна
 
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
