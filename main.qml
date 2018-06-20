@@ -25,6 +25,11 @@ ApplicationWindow {
     minimumWidth:  360
     minimumHeight: 568
 
+    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
+    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
+    FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
+
     title: qsTr("Scrambler v0.5.7-beta1")
 
     //AppBar
