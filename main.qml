@@ -37,7 +37,6 @@ ApplicationWindow {
         id: appBar
         height: 56
         spacing: 25
-        font.family: "Roboto"
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -51,7 +50,7 @@ ApplicationWindow {
             Text {
                 id: headerText
                 text: qsTr("Шифр Цезаря")
-                font.family: "Roboto Medium"
+                font.family: robotoMediumFont.name
                 font.pointSize: 15
                 color: "white"
                 anchors.verticalCenter: parent.verticalCenter
@@ -223,7 +222,7 @@ ApplicationWindow {
 
                         Text {
                             text: fragment
-                            font.family: "Roboto"
+                            font.family: robotoRegularFont.name
                             anchors.fill: parent
                             anchors.left: itemIcon.right
                             anchors.leftMargin: 72

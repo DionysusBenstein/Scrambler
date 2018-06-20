@@ -31,6 +31,11 @@ Item {
 
     Material.accent: "#3f51b5"
 
+    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
+    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
+    FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
+
     Morse { id: morse }
     Clipboard { id: clipboard }
 
@@ -61,7 +66,7 @@ Item {
             color: "#404040"
             text: qsTr("Шифр")
             font.pointSize: 15
-            font.family: "Roboto Medium"
+            font.family: robotoMediumFont.name
             anchors.top: parent.top
             anchors.topMargin: 7
             anchors.left: parent.left

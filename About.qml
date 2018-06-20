@@ -28,6 +28,11 @@ Item {
 
     Material.accent: "#ff9269"
 
+    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
+    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
+    FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
+
     Rectangle {
         id: background
         anchors.fill: parent
@@ -48,7 +53,7 @@ Item {
 
             Text {
                 text: qsTr("Scrambler")
-                font.family: "Roboto Medium"
+                font.family: robotoMediumFont.name
                 font.pointSize: 16
                 color: "#fc744e"
             }
@@ -63,7 +68,7 @@ Item {
         anchors.top: appIcon.bottom
         anchors.topMargin: 10
         text: qsTr("Версия: v0.5.7-beta1")
-        font.family: "Roboto Medium"
+        font.family: robotoMediumFont.name
         font.pointSize: 13
         color: "white"
     }
@@ -87,7 +92,7 @@ Item {
 
         Text {
             text: qsTr("О проекте:")
-            font.family: "Roboto Medium"
+            font.family: robotoMediumFont.name
             font.pointSize: 13
             color: "white"
             anchors.verticalCenter: parent.verticalCenter
@@ -110,8 +115,8 @@ Item {
             //anchors.fill: parent
             width: 342
             wrapMode: Text.Wrap
-            text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст различными алгоритмами шифрования.")
-            font.family: "Roboto Medium"
+            text: qsTr("Scrambler — это бесплатное кроссплатформенное приложение, шифрующее текст различными алгоритмами.")
+            font.family: robotoMediumFont.name
             font.pointSize: 11
             color: "white"
         }
