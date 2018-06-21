@@ -27,7 +27,7 @@ ApplicationWindow {
 
     color: "#eeeeee"
 
-    flags: Qt.FramelessWindowHint //Отключение обрамление окна
+    //flags: Qt.FramelessWindowHint //Отключение обрамление окна
 
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
@@ -37,14 +37,9 @@ ApplicationWindow {
     title: qsTr("Scrambler v0.5.8-beta1")
 
     //AppBar
-    ToolBar {
+    header: ToolBar {
         id: appBar
         height: 56
-        spacing: 25
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        antialiasing: true
 
         Rectangle {
             id: appBarRect
