@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: NavigationDrawer.qml                        */
+/* Original File Name: main.qml                                    */
 
 /* Date: 01-05-2018                                                */
 
