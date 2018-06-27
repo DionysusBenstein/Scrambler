@@ -29,10 +29,10 @@ ApplicationWindow {
 
     //flags: Qt.FramelessWindowHint //Отключение обрамление окна
 
-    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
-    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
+    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
+    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
 
     title: qsTr("Scrambler v0.5.9-beta1")
 
@@ -52,9 +52,11 @@ ApplicationWindow {
                 font.family: robotoMediumFont.name
                 font.pointSize: 15
                 color: "white"
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                anchors.margins: 72
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    left: parent.left
+                    margins: 72
+                }
             }
         }
 
@@ -68,9 +70,11 @@ ApplicationWindow {
 
             MenuBackIcon {
                 id: menuBackIcon
-                anchors.top: parent.top
-                anchors.left: parent.left
-                anchors.margins: 17
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    margins: 17
+                }
             }
 
             ToolButton {
@@ -79,36 +83,18 @@ ApplicationWindow {
                 onClicked: nav.toggle()
             }
         }
-
-        //        Item {
-        //            id: moreItem
-        //            width: 56
-        //            height: 56
-        //            anchors.top: parent.top
-        //            anchors.right: parent.right
-        //            clip: true
-
-        //            MoreIcon {
-        //                id: moreIcon
-        //                anchors.top: parent.top
-        //                anchors.left: parent.left
-        //                anchors.margins: 17
-        //            }
-
-        //            ToolButton {
-        //                anchors.centerIn: parent
-        //                scale: 3.1
-        //            }
-        //        }
     }
 
     //Loader для смены Фрагментов
     Loader {
         id: loader
-        anchors.top: appBar.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors {
+            top: appBar.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         source: "Caesar.qml"
 
         //Функция для смены содержимого Loader
@@ -190,9 +176,12 @@ ApplicationWindow {
 
             Item {
                 id: swipeArea
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
+                anchors {
+                    right: parent.right
+                    top: parent.top
+                    bottom: parent.bottom
+                }
+
                 width: 1
 
                 //Визуализация области свайпа
@@ -203,10 +192,12 @@ ApplicationWindow {
             }
 
             Item {
-                anchors.top: navTop.bottom
-                anchors.left: parent.left
-                anchors.right: swipeArea.left
-                anchors.bottom: parent.bottom
+                anchors {
+                    top: navTop.bottom
+                    left: parent.left
+                    right: swipeArea.left
+                    bottom: parent.bottom
+                }
 
                 //Список с пунктами меню
                 ListView {
@@ -216,15 +207,20 @@ ApplicationWindow {
                     delegate: ItemDelegate {
                         id: itemDelegate
                         height: 48
-                        anchors.left: parent.left
-                        anchors.right: parent.right
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                        }
 
                         Text {
                             text: fragment
+                            anchors {
+                                fill: parent
+                                left: itemIcon.right
+                                leftMargin: 72
+                            }
+
                             font.family: robotoRegularFont.name
-                            anchors.fill: parent
-                            anchors.left: itemIcon.right
-                            anchors.leftMargin: 72
                             font.pixelSize: 14
 
                             renderType: Text.NativeRendering
@@ -237,10 +233,12 @@ ApplicationWindow {
                             width: 18
                             height: 18
                             color: "#4285f4"
-                            anchors.left: parent.left
-                            anchors.leftMargin: 16
-                            anchors.verticalCenter: parent.verticalCenter
                             radius: 9
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                                left: parent.left
+                                leftMargin: 16
+                            }
                         }
 
                         //По нажатию на пункт меню заменяем компонент в Loader
@@ -256,10 +254,12 @@ ApplicationWindow {
             Rectangle {
                 id: navTop
                 color: "#4285f4"
-                anchors.top: parent.top
-                anchors.left: parent.left
-                anchors.right: parent.right
                 height: 148
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    right: parent.right
+                }
 
                 Image {
                     id: drawerTopBackground
