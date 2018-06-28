@@ -1,6 +1,6 @@
 # Scrambler
-[![License](https://img.shields.io/github/license/DionysusBenstein/text.svg)](https://github.com/DionysusBenstein/Scrambler/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/DionysusBenstein/text.svg)](https://github.com/DionysusBenstein/Scrambler/releases)
+[![License](https://img.shields.io/github/license/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Scrambler/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Scrambler/releases)
 
 <b>Scrambler</b> is a free cross-platform application that encrypts text with various algorithms. In addition to the encryption itself, the application provides a reference guide for each encryption algorithm.
 
