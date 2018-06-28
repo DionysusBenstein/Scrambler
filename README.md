@@ -8,3 +8,12 @@
 Description
 -----------
 This is the source code of the official Scrambler application, made on Qt.
+
+## Dependencies
+
+Qt >= 5.11.1 with at least the following modules is required:
+
+ * [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
+ * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
+ * [qtquickcontrols2](http://code.qt.io/cgit/qt/qtquickcontrols2.git)
+
