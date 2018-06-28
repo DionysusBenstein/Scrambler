@@ -152,7 +152,6 @@ ApplicationWindow {
         }
     }
 
-    //Модель данных для списка с пунктами меню
     ListModel {
         id: navModel
 
@@ -241,7 +240,6 @@ ApplicationWindow {
                             }
                         }
 
-                        //По нажатию на пункт меню заменяем компонент в Loader
                         onClicked: {
                             loader.loadFragment(index)
                             nav.hide()
