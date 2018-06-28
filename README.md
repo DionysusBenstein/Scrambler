@@ -3,3 +3,7 @@
 
 ![Screenshot](https://github.com/DionysusBenstein/Scrambler/raw/master/images/demo/CaesarCipherScreenshot.png) 
 ![Screenshot](https://github.com/DionysusBenstein/Scrambler/raw/master/images/demo/MorseCipherScreenshot.png)
+
+Description
+-----------
+This is the source code of the official Scrambler application, made on Qt, available free of charge in all stores.
