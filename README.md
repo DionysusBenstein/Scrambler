@@ -6,4 +6,4 @@
 
 Description
 -----------
-This is the source code of the official Scrambler application, made on Qt, available free of charge in all stores.
+This is the source code of the official Scrambler application, made on Qt.
