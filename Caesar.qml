@@ -28,8 +28,12 @@ import com.benstein.clipboard 1.0
 Item {
     id: caesar
     anchors.fill: parent
-
-    Material.accent: "#4285f4"
+    Material.accent: primaryColor
+    property color lightFontColor: "#9a9a9a"
+    property color darkFontColor: "#404040"
+    property color primaryColor: "#4285f4"
+    property color lightColor: "#80b4ff"
+    property color darkColor: "#0059c1"
 
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
@@ -94,7 +98,7 @@ Item {
 
         Label {
             id: label
-            color: "#404040"
+            color: darkFontColor
             text: qsTr("Шифр")
             font.pointSize: 15
             font.family: robotoMediumFont.name
@@ -109,7 +113,7 @@ Item {
             x: 12
             width: 244
             height: 146
-            color: "#9a9a9a"
+            color: lightFontColor
             text: {
                 if (encryptRadioButton.checked) {
                     caesarBackEnd.encrypt(textField.text, spinBox.value);
@@ -137,7 +141,7 @@ Item {
         anchors.topMargin: -53
         anchors.right: pane.right
         flat: true
-        Material.foreground: "#4285f4"
+        Material.foreground: primaryColor
         onClicked: clipboard.copy(outoutLabel.text)
     }
 }

@@ -21,20 +21,16 @@ import QtQuick.Controls.Material 2.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-
     minimumWidth:  360
     minimumHeight: 568
+    title: qsTr("Scrambler v0.5.9-beta1")
 
-    color: "#eeeeee"
-
-    //flags: Qt.FramelessWindowHint //Отключение обрамление окна
+    //flags: Qt.FramelessWindowHint | Qt.Window
 
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
     FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
-
-    title: qsTr("Scrambler v0.5.9-beta1")
 
     //AppBar
     ToolBar {
