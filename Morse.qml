@@ -21,15 +21,15 @@ import QtQuick.Controls.Material 2.3
 import com.benstein.morse 1.0
 import com.benstein.clipboard 1.0
 
-//   Colors
-//Main:  #3f51b5
-//Dark:  #002984
-//Light: #757de8
-
 Item {
     anchors.fill: parent
+    Material.accent: primaryColor
 
-    Material.accent: "#3f51b5"
+    property color lightFontColor: "#9a9a9a"
+    property color darkFontColor: "#404040"
+    property color primaryColor: "#3f51b5"
+    property color lightColor: "#757de8"
+    property color darkColor: "#002984"
 
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
@@ -63,7 +63,7 @@ Item {
 
         Label {
             id: label
-            color: "#404040"
+            color: darkFontColor
             text: qsTr("Шифр")
             font.pointSize: 15
             font.family: robotoMediumFont.name
@@ -78,7 +78,7 @@ Item {
             x: 12
             width: 244
             height: 146
-            color: "#9a9a9a"
+            color: lightFontColor
             text: {
                 morse.isMorse(textField.text) ? morse.decrypt(textField.text) : morse.encrypt(textField.text)
             }
@@ -104,8 +104,7 @@ Item {
         anchors.topMargin: -53
         anchors.right: pane.right
         flat: true
-        Material.foreground: "#3f51b5"
-
+        Material.foreground: primaryColor
         onClicked: clipboard.copy(outputLabel.text)
     }
 }

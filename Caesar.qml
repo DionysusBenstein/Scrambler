@@ -20,15 +20,11 @@ import QtQuick.Controls.Material 2.3
 import com.benstein.caesar 1.0
 import com.benstein.clipboard 1.0
 
-//   Colors
-//Main:  #4285f4
-//Dark:  #0059c1
-//Light: #80b4ff
-
 Item {
     id: caesar
     anchors.fill: parent
     Material.accent: primaryColor
+
     property color lightFontColor: "#9a9a9a"
     property color darkFontColor: "#404040"
     property color primaryColor: "#4285f4"
