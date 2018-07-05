@@ -172,6 +172,16 @@ ApplicationWindow {
             color: "white"
 
             Item {
+                id: swipeArea
+                width: 1
+                anchors {
+                    right: parent.right
+                    top: parent.top
+                    bottom: parent.bottom
+                }
+            }
+
+            Item {
                 anchors {
                     top: navTop.bottom
                     left: parent.left
@@ -179,7 +189,6 @@ ApplicationWindow {
                     bottom: parent.bottom
                 }
 
-                //Список с пунктами меню
                 ListView {
                     id: lView
                     anchors.fill: parent
@@ -223,7 +232,7 @@ ApplicationWindow {
 
                         onClicked: {
                             loader.loadFragment(index)
-                            nav.hide()
+                            nav.close()
                         }
                     }
                     model: navModel
