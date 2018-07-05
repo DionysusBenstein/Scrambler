@@ -78,33 +78,42 @@ Item {
 
     SpinBox {
         id: spinBox
-        anchors.bottom: pane.top
-        anchors.bottomMargin: 15
-        anchors.right: parent.right
-        anchors.rightMargin: 4
         editable: true
+        anchors {
+            bottom: pane.top
+            right: parent.right
+            bottomMargin: 15
+            rightMargin: 4
+        }
     }
 
     Pane {
         id: pane
         width: 280
         height: 248
-        font.pointSize: 20
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 36
-        anchors.horizontalCenter: parent.horizontalCenter
         Material.elevation: 30
+        font.pointSize: 20
+        anchors {
+            bottom: parent.bottom
+            horizontalCenter: parent.horizontalCenter
+            bottomMargin: 36
+        }
 
         Label {
             id: label
             color: darkFontColor
             text: qsTr("Шифр")
-            font.pointSize: 15
-            font.family: robotoMediumFont.name
-            anchors.top: parent.top
-            anchors.topMargin: 7
-            anchors.left: parent.left
-            anchors.leftMargin: 12
+            anchors {
+                top: parent.top
+                left: parent.left
+                topMargin: 7
+                leftMargin: 12
+            }
+
+            font {
+                pointSize: 15
+                family: robotoMediumFont.name
+            }
         }
 
         Label {
@@ -113,6 +122,15 @@ Item {
             width: 244
             height: 146
             color: lightFontColor
+            antialiasing: true
+            smooth: true
+            font.pointSize: 12
+            fontSizeMode: Text.Fit
+            anchors {
+                top: label.bottom
+                topMargin: 17
+            }
+
             text: {
                 if (encryptRadioButton.checked) {
                     caesarBackEnd.encrypt(textField.text, spinBox.value);
@@ -120,12 +138,6 @@ Item {
                     caesarBackEnd.decrypt(textField.text, spinBox.value)
                 }
             }
-            antialiasing: true
-            smooth: true
-            anchors.top: label.bottom
-            anchors.topMargin: 17
-            font.pointSize: 12
-            fontSizeMode: Text.Fit
         }
     }
 
@@ -134,13 +146,15 @@ Item {
         x: 220
         y: 9
         text: qsTr("Скопировать")
-        anchors.bottom: pane.bottom
-        anchors.bottomMargin: 1
-        anchors.rightMargin: 14
-        anchors.topMargin: -53
-        anchors.right: pane.right
         flat: true
         Material.foreground: caesarPrimaryColor
         onClicked: clipboard.copy(outoutLabel.text)
+        anchors {
+            bottom: pane.bottom
+            right: pane.right
+            bottomMargin: 1
+            rightMargin: 14
+            topMargin: -53
+        }
     }
 }
