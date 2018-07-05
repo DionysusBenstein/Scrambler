@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>MenuBackIcon.qml</file>
-        <file>NavigationDrawer.qml</file>
         <file>Caesar.qml</file>
         <file>Vernam.qml</file>
         <file>Vigenere.qml</file>
