@@ -32,7 +32,53 @@ ApplicationWindow {
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
     FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
 
-    AppBar { id: appBar }
+    ToolBar {
+        id: appBar
+        height: 56
+
+        Rectangle {
+            id: appBarRect
+            anchors.fill: parent
+            color: "#4285f4"
+
+            Text {
+                id: headerText
+                text: qsTr("Шифр Цезаря")
+                font.family: robotoMediumFont.name
+                font.pointSize: 15
+                color: "black"
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    left: parent.left
+                    margins: 72
+                }
+            }
+        }
+
+        Item {
+            id: menuItem
+            width: 56
+            height: 56
+            anchors.top: parent.top
+            anchors.left: parent.left
+            clip: true
+
+            MenuBackIcon {
+                id: menuBackIcon
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    margins: 17
+                }
+            }
+
+            ToolButton {
+                anchors.centerIn: parent
+                scale: 3.1
+                onClicked: nav.toggle()
+            }
+        }
+    }
 
     //Loader для смены Фрагментов
     Loader {
@@ -54,36 +100,36 @@ ApplicationWindow {
                 appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
                 break;
-                //                case 1:
-                //                    loader.source = "Vernam.qml"
-                //                    appBarRect.color = "#e91e63"
-                //                    headerText.text = "Шифр Вернама"
-                //                    break;
-                //                case 2:
-                //                    loader.source = "Vigenere.qml"
-                //                    appBarRect.color = "#f44336"
-                //                    headerText.text = "Шифр Виженера"
-                //                    break;
-                //                case 3:
-                //                    loader.source = "Gronsfeld.qml"
-                //                    appBarRect.color = "#673ab7"
-                //                    headerText.text = "Шифр Гронсфельда"
-                //                    break;
+            case 1:
+                loader.source = "Vernam.qml"
+                appBarRect.color = "#e91e63"
+                headerText.text = "Шифр Вернама"
+                break;
+            case 2:
+                loader.source = "Vigenere.qml"
+                appBarRect.color = "#f44336"
+                headerText.text = "Шифр Виженера"
+                break;
+            case 3:
+                loader.source = "Gronsfeld.qml"
+                appBarRect.color = "#673ab7"
+                headerText.text = "Шифр Гронсфельда"
+                break;
             case 1:
                 loader.source = "Morse.qml"
                 appBarRect.color = "#3f51b5"
                 headerText.text = "Азбука Морзе"
                 break;
-                //                case 5:
-                //                    loader.source = "Enigma.qml"
-                //                    appBarRect.color = "#9c27b0"
-                //                    headerText.text = "Алгоритм Энигмы"
-                //                    break;
-                //                case 6:
-                //                    loader.source = "Settings.qml"
-                //                    headerText.text = "Настройки"
-                //                    appBarRect.color = "#424242"
-                //                    break;
+            case 5:
+                loader.source = "Enigma.qml"
+                appBarRect.color = "#9c27b0"
+                headerText.text = "Алгоритм Энигмы"
+                break;
+            case 6:
+                loader.source = "Settings.qml"
+                headerText.text = "Настройки"
+                appBarRect.color = "#424242"
+                break;
             case 2:
                 loader.source = "About.qml"
                 appBarRect.color = "#ff9269"
@@ -104,15 +150,15 @@ ApplicationWindow {
     ListModel {
         id: navModel
 
-        ListElement {fragment: qsTr("Шифр Цезаря")}
-        //ListElement {fragment: qsTr("Шифр Вернама")}
-        //ListElement {fragment: qsTr("Шифр Виженера")}
-        //ListElement {fragment: qsTr("Шифр Гронсфельда")}
-        ListElement {fragment: qsTr("Азбука Морзе")}
-        //ListElement {fragment: qsTr("Алгоритм Энигмы")}
-        //ListElement {fragment: qsTr("Настройки")}
-        ListElement {fragment: qsTr("О программе")}
-        ListElement {fragment: qsTr("Выход")}
+        ListElement { name: qsTr("Шифр Цезаря"); iconColor: "#4285f4"      }
+        ListElement { name: qsTr("Шифр Вернама"); iconColor: "#e91e63"     }
+        ListElement { name: qsTr("Шифр Виженера"); iconColor: "#f44336"    }
+        ListElement { name: qsTr("Шифр Гронсфельда"); iconColor: "#673ab7" }
+        ListElement { name: qsTr("Азбука Морзе"); iconColor: "#3f51b5"     }
+        ListElement { name: qsTr("Алгоритм Энигмы"); iconColor: "#9c27b0"  }
+        ListElement { name: qsTr("Настройки"); iconColor: "#424242"        }
+        ListElement { name: qsTr("О программе"); iconColor: "#ff9269"      }
+        ListElement { name: qsTr("Выход"); iconColor: "#e81123"            }
     }
 
     NavigationDrawer {
@@ -124,19 +170,12 @@ ApplicationWindow {
 
             Item {
                 id: swipeArea
+                width: 1
                 anchors {
                     right: parent.right
                     top: parent.top
                     bottom: parent.bottom
                 }
-
-                width: 1
-
-                //Визуализация области свайпа
-                //Rectangle {
-                //    anchors.fill: parent
-                //    color: "#ff4181"
-                //}
             }
 
             Item {
@@ -161,7 +200,7 @@ ApplicationWindow {
                         }
 
                         Text {
-                            text: fragment
+                            text: name
                             anchors {
                                 fill: parent
                                 left: itemIcon.right
@@ -180,7 +219,7 @@ ApplicationWindow {
                             id: itemIcon
                             width: 18
                             height: 18
-                            color: "#4285f4"
+                            color: iconColor
                             radius: 9
                             anchors {
                                 verticalCenter: parent.verticalCenter
@@ -200,7 +239,6 @@ ApplicationWindow {
 
             Rectangle {
                 id: navTop
-                color: "#4285f4"
                 height: 148
                 anchors {
                     top: parent.top
