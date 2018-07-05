@@ -172,16 +172,6 @@ ApplicationWindow {
             color: "white"
 
             Item {
-                id: swipeArea
-                width: 1
-                anchors {
-                    right: parent.right
-                    top: parent.top
-                    bottom: parent.bottom
-                }
-            }
-
-            Item {
                 anchors {
                     top: navTop.bottom
                     left: parent.left
