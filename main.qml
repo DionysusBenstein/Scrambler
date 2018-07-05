@@ -75,7 +75,7 @@ ApplicationWindow {
             ToolButton {
                 anchors.centerIn: parent
                 scale: 3.1
-                onClicked: nav.toggle()
+                onClicked: nav.open()
             }
         }
     }
@@ -161,8 +161,11 @@ ApplicationWindow {
         ListElement { name: qsTr("Выход"); iconColor: "#e81123"            }
     }
 
-    NavigationDrawer {
+    Drawer {
         id: nav
+        //width: 0.66 * mainWindow.width
+        width: (mainWindow.width / 100) * 78
+        height: mainWindow.height
 
         Rectangle {
             anchors.fill: parent
