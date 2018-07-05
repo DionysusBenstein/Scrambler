@@ -27,14 +27,14 @@ Item {
 
     property color lightFontColor: "#9a9a9a"
     property color darkFontColor: "#404040"
-    property color primaryColor: "#4285f4"
-    property color lightColor: "#80b4ff"
-    property color darkColor: "#0059c1"
+    property color caesarPrimaryColor: "#4285f4"
+    property color caesarLightColor: "#80b4ff"
+    property color caesarDarkColor: "#0059c1"
 
-    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
-    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
+    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
+    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
 
     Caesar { id: caesarBackEnd }
     Clipboard { id: clipboard }
@@ -42,35 +42,38 @@ Item {
     TextField {
         id: textField
         placeholderText: "Введите текст..."
-        anchors.right: parent.right
-        anchors.rightMargin: 25
-        anchors.left: parent.left
-        anchors.leftMargin: 25
-        anchors.top: parent.top
-        anchors.topMargin: 49
         renderType: Text.QtRendering
+        anchors {
+            right: parent.right
+            left: parent.left
+            top: parent.top
+            rightMargin: 25
+            leftMargin: 25
+            topMargin: 49
+        }
     }
 
     RadioButton {
         id: encryptRadioButton
         text: qsTr(" Зашифровать")
         checked: true
-        checkable: true
-        anchors.left: parent.left
-        anchors.leftMargin: 13
-        anchors.top: textField.bottom
-        anchors.topMargin: 1
+        anchors {
+            left: parent.left
+            top: textField.bottom
+            leftMargin: 13
+            topMargin: 1
+        }
     }
 
     RadioButton {
         id: decryptRadioButton
         text: qsTr(" Расшифровать")
-        checked: false
-        checkable: true
-        anchors.left: parent.left
-        anchors.leftMargin: 13
-        anchors.top: encryptRadioButton.bottom
-        anchors.topMargin: -4
+        anchors {
+            left: parent.left
+            top: encryptRadioButton.bottom
+            leftMargin: 13
+            topMargin: -4
+        }
     }
 
     SpinBox {
@@ -137,7 +140,7 @@ Item {
         anchors.topMargin: -53
         anchors.right: pane.right
         flat: true
-        Material.foreground: primaryColor
+        Material.foreground: caesarPrimaryColor
         onClicked: clipboard.copy(outoutLabel.text)
     }
 }
