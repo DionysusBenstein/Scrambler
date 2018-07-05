@@ -44,13 +44,16 @@ ApplicationWindow {
             Text {
                 id: headerText
                 text: qsTr("Шифр Цезаря")
-                font.family: robotoMediumFont.name
-                font.pointSize: 15
                 color: "black"
                 anchors {
                     verticalCenter: parent.verticalCenter
                     left: parent.left
                     margins: 72
+                }
+
+                font {
+                    family: robotoMediumFont.name
+                    pointSize: 15
                 }
             }
         }
@@ -59,9 +62,11 @@ ApplicationWindow {
             id: menuItem
             width: 56
             height: 56
-            anchors.top: parent.top
-            anchors.left: parent.left
             clip: true
+            anchors {
+                top: parent.top
+                left: parent.left
+            }
 
             MenuBackIcon {
                 id: menuBackIcon
