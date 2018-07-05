@@ -44,7 +44,7 @@ ApplicationWindow {
             Text {
                 id: headerText
                 text: qsTr("Шифр Цезаря")
-                color: "black"
+                color: "white"
                 anchors {
                     verticalCenter: parent.verticalCenter
                     left: parent.left
@@ -88,14 +88,13 @@ ApplicationWindow {
     //Loader для смены Фрагментов
     Loader {
         id: loader
+        source: "Caesar.qml"
         anchors {
             top: appBar.bottom
             left: parent.left
             right: parent.right
             bottom: parent.bottom
         }
-
-        source: "Caesar.qml"
 
         //Функция для смены содержимого Loader
         function loadFragment(index) {
