@@ -28,81 +28,75 @@ Item {
     property color caesarPrimaryColor: "#4285f4"
     property color caesarLightColor: "#80b4ff"
     property color caesarDarkColor: "#0059c1"
-    property color lightFontColor: "#9a9a9a"
-    property color darkFontColor: "#404040"
 
-    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
-    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
-    FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
-
-    Caesar { id: caesarBackEnd }
-    Clipboard { id: clipboard }
+    Clipboard { id: clipboard     }
+    Caesar    { id: caesarBackEnd }
 
     TextField {
-        id: textField
-        placeholderText: "Введите текст..."
-        renderType: Text.QtRendering
+        id: input
         anchors {
             right: parent.right
             left: parent.left
             top: parent.top
-            rightMargin: 25
-            leftMargin: 25
+            rightMargin: 16
+            leftMargin: 16
             topMargin: 49
         }
+
+        selectByMouse: true
+        persistentSelection: true
+        //wrapMode: Text.WrapAnywhere
+        placeholderText: "Введите текст..."
+        renderType: Text.QtRendering
     }
 
-    RadioButton {
-        id: encryptRadioButton
-        text: qsTr(" Зашифровать")
-        checked: true
+    Column {
+        id: radioButtonsColumn
         anchors {
             left: parent.left
-            top: textField.bottom
+            top: input.bottom
             leftMargin: 13
             topMargin: 1
         }
-    }
 
-    RadioButton {
-        id: decryptRadioButton
-        text: qsTr(" Расшифровать")
-        anchors {
-            left: parent.left
-            top: encryptRadioButton.bottom
-            leftMargin: 13
-            topMargin: -4
+        RadioButton {
+            id: encryptRadioButton
+            text: qsTr(" Зашифровать")
+            checked: true
+        }
+
+        RadioButton {
+            id: decryptRadioButton
+            text: qsTr(" Расшифровать")
         }
     }
 
     SpinBox {
         id: spinBox
-        editable: true
         anchors {
-            bottom: pane.top
+            left: radioButtonsColumn.right
             right: parent.right
-            bottomMargin: 15
-            rightMargin: 4
+            bottom: radioButtonsColumn.bottom
+            rightMargin: 16
+            leftMargin: 16
         }
+        editable: true
     }
 
     Pane {
         id: pane
-        width: 280
-        height: 248
-        Material.elevation: 30
-        font.pointSize: 20
         anchors {
+            left: parent.left
+            right: parent.right
+            top: spinBox.bottom
             bottom: parent.bottom
-            horizontalCenter: parent.horizontalCenter
-            bottomMargin: 36
+            margins: 24
         }
 
+        Material.elevation: 30
+
         Label {
-            id: label
-            color: darkFontColor
-            text: qsTr("Шифр")
+            id: outoutLabelTitle
             anchors {
                 top: parent.top
                 left: parent.left
@@ -110,34 +104,40 @@ Item {
                 leftMargin: 12
             }
 
+            color: darkFontColor
+            text: qsTr("Шифр")
             font {
                 pointSize: 15
                 family: robotoMediumFont.name
             }
         }
 
+        Item {
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: outoutLabelTitle.bottom
+                bottom: parent.bottom
+                margins: 12
+            }
+
         Label {
             id: outoutLabel
-            x: 12
-            width: 244
-            height: 146
+            anchors.fill: outoutLabel
             color: lightFontColor
             antialiasing: true
             smooth: true
             font.pointSize: 12
-            fontSizeMode: Text.Fit
-            anchors {
-                top: label.bottom
-                topMargin: 17
-            }
+            wrapMode: Text.Wrap
 
             text: {
                 if (encryptRadioButton.checked) {
-                    caesarBackEnd.encrypt(textField.text, spinBox.value);
+                    caesarBackEnd.encrypt(input.text, spinBox.value);
                 } else if (decryptRadioButton.checked) {
-                    caesarBackEnd.decrypt(textField.text, spinBox.value)
+                    caesarBackEnd.decrypt(input.text, spinBox.value)
                 }
             }
+        }
         }
     }
 
@@ -145,10 +145,6 @@ Item {
         id: copyButton
         x: 220
         y: 9
-        text: qsTr("Скопировать")
-        flat: true
-        Material.foreground: caesarPrimaryColor
-        onClicked: clipboard.copy(outoutLabel.text)
         anchors {
             bottom: pane.bottom
             right: pane.right
@@ -156,5 +152,10 @@ Item {
             rightMargin: 14
             topMargin: -53
         }
+
+        text: qsTr("Скопировать")
+        flat: true
+        Material.foreground: caesarPrimaryColor
+        onClicked: clipboard.copy(outoutLabel.text)
     }
 }

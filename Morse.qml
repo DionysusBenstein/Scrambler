@@ -90,7 +90,7 @@ Item {
             width: 244
             height: 146
             color: lightFontColor
-            text: morse.isMorse(textField.text) ? morse.decrypt(textField.text) : morse.encrypt(textField.text)
+
             fontSizeMode: Text.Fit
             antialiasing: true
             smooth: true

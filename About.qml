@@ -25,13 +25,7 @@ import QtQuick.Controls.Material 2.3
 
 Item {
     anchors.fill: parent
-
     Material.accent: "#ff9269"
-
-    FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf" }
-    FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf" }
-    FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf" }
 
     Rectangle {
         id: background

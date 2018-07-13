@@ -59,7 +59,6 @@ Item {
             PropertyChanges {
                 target: root
                 rotation: 180
-
             }
 
             PropertyChanges {

@@ -27,10 +27,13 @@ ApplicationWindow {
 
     //flags: Qt.FramelessWindowHint | Qt.Window
 
+    property color lightFontColor: "#9a9a9a"
+    property color darkFontColor: "#404040"
+
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
 
     ToolBar {
         id: appBar
@@ -62,19 +65,21 @@ ApplicationWindow {
             id: menuItem
             width: 56
             height: 56
-            clip: true
             anchors {
                 top: parent.top
                 left: parent.left
             }
 
+            clip: true
+
             MenuBackIcon {
                 id: menuBackIcon
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    margins: 17
-                }
+//                anchors {
+//                    top: parent.top
+//                    left: parent.left
+//                    margins: 17
+//                }
+                anchors.centerIn: parent
             }
 
             ToolButton {
@@ -119,7 +124,7 @@ ApplicationWindow {
                 appBarRect.color = "#673ab7"
                 headerText.text = "Шифр Гронсфельда"
                 break;
-            case 1:
+            case 4:
                 loader.source = "Morse.qml"
                 appBarRect.color = "#3f51b5"
                 headerText.text = "Азбука Морзе"
@@ -134,12 +139,12 @@ ApplicationWindow {
                 headerText.text = "Настройки"
                 appBarRect.color = "#424242"
                 break;
-            case 2:
+            case 7:
                 loader.source = "About.qml"
                 appBarRect.color = "#ff9269"
                 headerText.text = "О программе"
                 break;
-            case 3:
+            case 8:
                 close()
                 break;
             default:
