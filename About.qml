@@ -61,7 +61,7 @@ Item {
         anchors.horizontalCenter: appIcon.horizontalCenter
         anchors.top: appIcon.bottom
         anchors.topMargin: 10
-        text: qsTr("Версия: v0.5.8-beta1")
+        text: qsTr("Версия: v0.6.0")
         font.family: robotoMediumFont.name
         font.pointSize: 13
         color: "white"

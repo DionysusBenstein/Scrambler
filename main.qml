@@ -23,7 +23,7 @@ ApplicationWindow {
     visible: true
     minimumWidth:  360
     minimumHeight: 568
-    title: qsTr("Scrambler v0.5.9-beta1")
+    title: qsTr("Scrambler v0.6.0")
 
     //flags: Qt.FramelessWindowHint | Qt.Window
 
