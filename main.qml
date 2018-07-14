@@ -33,59 +33,7 @@ ApplicationWindow {
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
 
-    ToolBar {
-        id: appBar
-        height: 56
-
-        Rectangle {
-            id: appBarRect
-            anchors.fill: parent
-
-            Text {
-                id: headerText
-                text: qsTr("Шифр Цезаря")
-                color: "white"
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                    left: parent.left
-                    margins: 72
-                }
-
-                font {
-                    family: robotoMediumFont.name
-                    pointSize: 15
-                }
-            }
-        }
-
-        Item {
-            id: menuItem
-            width: 56
-            height: 56
-            anchors {
-                top: parent.top
-                left: parent.left
-            }
-
-            clip: true
-
-            MenuBackIcon {
-                id: menuBackIcon
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    margins: 17
-                }
-                //anchors.centerIn: parent
-            }
-
-            ToolButton {
-                anchors.centerIn: parent
-                scale: 3.1
-                onClicked: nav.open()
-            }
-        }
-    }
+    AppBar { id: appBar }
 
     Loader {
         id: loader
