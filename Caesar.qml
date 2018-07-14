@@ -111,7 +111,8 @@ Item {
             }
         }
 
-        Item {
+        Label {
+            id: outoutLabel
             anchors {
                 left: parent.left
                 right: parent.right
@@ -120,9 +121,6 @@ Item {
                 margins: 12
             }
 
-        Label {
-            id: outoutLabel
-            anchors.fill: outoutLabel
             color: lightFontColor
             antialiasing: true
             smooth: true
@@ -136,7 +134,6 @@ Item {
                     caesarBackEnd.decrypt(input.text, spinBox.value)
                 }
             }
-        }
         }
     }
 

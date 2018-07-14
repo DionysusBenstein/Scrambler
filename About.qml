@@ -56,14 +56,17 @@ Item {
 
     Text {
         id: appInfo
-        width: 168
-        height: 20
-        anchors.horizontalCenter: appIcon.horizontalCenter
-        anchors.top: appIcon.bottom
-        anchors.topMargin: 10
-        text: qsTr("Версия: v0.6.0")
-        font.family: robotoMediumFont.name
-        font.pointSize: 13
+        anchors {
+            top: appIcon.bottom
+            topMargin: 10
+            horizontalCenter: appIcon.horizontalCenter
+        }
+
+        text: qsTr("Версия: v0.6.1")
+        font {
+            family: robotoMediumFont.name
+            pointSize: 13
+        }
         color: "white"
     }
 

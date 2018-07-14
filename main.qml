@@ -23,9 +23,7 @@ ApplicationWindow {
     visible: true
     minimumWidth:  360
     minimumHeight: 568
-    title: qsTr("Scrambler v0.6.0")
-
-    //flags: Qt.FramelessWindowHint | Qt.Window
+    title: qsTr("Scrambler v0.6.1")
 
     property color lightFontColor: "#9a9a9a"
     property color darkFontColor: "#404040"
@@ -42,7 +40,6 @@ ApplicationWindow {
         Rectangle {
             id: appBarRect
             anchors.fill: parent
-            color: "#4285f4"
 
             Text {
                 id: headerText
@@ -74,12 +71,12 @@ ApplicationWindow {
 
             MenuBackIcon {
                 id: menuBackIcon
-//                anchors {
-//                    top: parent.top
-//                    left: parent.left
-//                    margins: 17
-//                }
-                anchors.centerIn: parent
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    margins: 17
+                }
+                //anchors.centerIn: parent
             }
 
             ToolButton {
@@ -90,7 +87,6 @@ ApplicationWindow {
         }
     }
 
-    //Loader для смены Фрагментов
     Loader {
         id: loader
         source: "Caesar.qml"
@@ -101,12 +97,11 @@ ApplicationWindow {
             bottom: parent.bottom
         }
 
-        //Функция для смены содержимого Loader
         function loadFragment(index) {
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
-                //appBarRect.color = "#4285f4"
+                appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
                 break;
             case 1:
@@ -149,7 +144,7 @@ ApplicationWindow {
                 break;
             default:
                 loader.source = "Caesar.qml"
-                //appBarRect.color = "#4285f4"
+                appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
                 break;
             }
