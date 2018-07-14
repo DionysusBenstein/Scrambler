@@ -45,7 +45,6 @@ Item {
 
         selectByMouse: true
         persistentSelection: true
-        //wrapMode: Text.WrapAnywhere
         placeholderText: "Введите текст..."
         renderType: Text.QtRendering
     }

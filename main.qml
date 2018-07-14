@@ -106,7 +106,7 @@ ApplicationWindow {
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
-                appBarRect.color = "#4285f4"
+                //appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
                 break;
             case 1:
@@ -149,7 +149,7 @@ ApplicationWindow {
                 break;
             default:
                 loader.source = "Caesar.qml"
-                appBarRect.color = "#4285f4"
+                //appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
                 break;
             }
@@ -172,7 +172,6 @@ ApplicationWindow {
 
     Drawer {
         id: nav
-        //width: 0.66 * mainWindow.width
         width: (mainWindow.width / 100) * 78
         height: mainWindow.height
 
