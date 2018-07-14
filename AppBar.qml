@@ -2,7 +2,7 @@
 
 /* Original File Name: AppBar.qml                                  */
 
-/* Date: 01-05-2018                                                */
+/* Date: 14-07-2018                                                */
 
 /* Developer: Dionysus Benstein                                    */
 
