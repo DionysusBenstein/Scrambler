@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: AppBar.qml                                  */
+
+/* Date: 01-05-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Реализация верхней панели приложения.              */
+
+/*******************************************************************/
+
 import QtQuick 2.11
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
