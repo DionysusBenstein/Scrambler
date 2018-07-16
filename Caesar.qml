@@ -92,9 +92,11 @@ Item {
             margins: 24
         }
 
+        topPadding: 25
+        leftPadding: 25
         Material.elevation: 30
 
-        Text {
+        Label {
             id: outoutLabelTitle
             anchors {
                 left: parent.left
@@ -104,12 +106,12 @@ Item {
             color: darkFontColor
             text: qsTr("Шифр")
             font {
-                pointSize: 15
+                pixelSize: 20
                 family: robotoMediumFont.name
             }
         }
 
-        Text {
+        Label {
             id: outoutLabel
             anchors {
                 left: parent.left
