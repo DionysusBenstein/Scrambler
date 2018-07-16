@@ -135,23 +135,20 @@ Item {
                 }
             }
         }
-    }
 
-    Button {
-        id: copyButton
-        x: 220
-        y: 9
-        anchors {
-            bottom: pane.bottom
-            right: pane.right
-            bottomMargin: 1
-            rightMargin: 14
-            topMargin: -53
+
+
+        Button {
+            id: copyButton
+            anchors {
+                right: parent.right
+                bottom: parent.bottom
+            }
+
+            text: qsTr("Скопировать")
+            flat: true
+            Material.foreground: caesarPrimaryColor
+            onClicked: clipboard.copy(outoutLabel.text)
         }
-
-        text: qsTr("Скопировать")
-        flat: true
-        Material.foreground: caesarPrimaryColor
-        onClicked: clipboard.copy(outoutLabel.text)
     }
 }
