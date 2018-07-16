@@ -92,8 +92,7 @@ Item {
             margins: 24
         }
 
-        topPadding: 25
-        leftPadding: 25
+        padding: 0
         Material.elevation: 30
 
         Label {
@@ -101,6 +100,8 @@ Item {
             anchors {
                 left: parent.left
                 top: parent.top
+                leftMargin: 25
+                topMargin: 25
             }
 
             color: darkFontColor
@@ -141,6 +142,8 @@ Item {
             anchors {
                 right: parent.right
                 bottom: parent.bottom
+                rightMargin: 8
+                bottomMargin: 2
             }
 
             text: qsTr("Скопировать")
