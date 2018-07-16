@@ -94,13 +94,11 @@ Item {
 
         Material.elevation: 30
 
-        Label {
+        Text {
             id: outoutLabelTitle
             anchors {
-                top: parent.top
                 left: parent.left
-                topMargin: 7
-                leftMargin: 12
+                top: parent.top
             }
 
             color: darkFontColor
@@ -111,7 +109,7 @@ Item {
             }
         }
 
-        Label {
+        Text {
             id: outoutLabel
             anchors {
                 left: parent.left
@@ -135,8 +133,6 @@ Item {
                 }
             }
         }
-
-
 
         Button {
             id: copyButton
