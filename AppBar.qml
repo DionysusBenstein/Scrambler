@@ -16,9 +16,15 @@ import QtQuick 2.11
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
-Rectangle {
+ToolBar {
     id: appBar
     height: 56
+    anchors {
+        left: parent.left
+        right: parent.right
+    }
+
+    property alias appBarRectColor: appBarRect.color
 
     Rectangle {
         id: appBarRect

@@ -33,8 +33,6 @@ ApplicationWindow {
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
 
-    AppBar { id: appBar }
-
     Loader {
         id: loader
         source: "Caesar.qml"
@@ -49,51 +47,51 @@ ApplicationWindow {
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
-                appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
+                appBar.aappBarRectColor = "#4285f4"
                 break;
             case 1:
                 loader.source = "Vernam.qml"
-                appBarRect.color = "#e91e63"
                 headerText.text = "Шифр Вернама"
+                appBar.aappBarRectColor = "#e91e63"
                 break;
             case 2:
                 loader.source = "Vigenere.qml"
-                appBarRect.color = "#f44336"
                 headerText.text = "Шифр Виженера"
+                appBar.aappBarRectColor = "#f44336"
                 break;
             case 3:
                 loader.source = "Gronsfeld.qml"
-                appBarRect.color = "#673ab7"
                 headerText.text = "Шифр Гронсфельда"
+                appBar.aappBarRectColor = "#673ab7"
                 break;
             case 4:
                 loader.source = "Morse.qml"
-                appBarRect.color = "#3f51b5"
                 headerText.text = "Азбука Морзе"
+                appBar.aappBarRectColor = "#3f51b5"
                 break;
             case 5:
                 loader.source = "Enigma.qml"
-                appBarRect.color = "#9c27b0"
                 headerText.text = "Алгоритм Энигмы"
+                appBar.aappBarRectColor = "#9c27b0"
                 break;
             case 6:
                 loader.source = "Settings.qml"
                 headerText.text = "Настройки"
-                appBarRect.color = "#424242"
+                appBar.aappBarRectColor = "#424242"
                 break;
             case 7:
                 loader.source = "About.qml"
-                appBarRect.color = "#ff9269"
                 headerText.text = "О программе"
+                appBar.aappBarRectColor = "#ff9269"
                 break;
             case 8:
                 close()
                 break;
             default:
                 loader.source = "Caesar.qml"
-                appBarRect.color = "#4285f4"
                 headerText.text = "Шифр Цезаря"
+                appBar.aappBarRectColor = "#4285f4"
                 break;
             }
         }
@@ -112,6 +110,8 @@ ApplicationWindow {
         ListElement { name: qsTr("О программе"); iconColor: "#ff9269"      }
         ListElement { name: qsTr("Выход"); iconColor: "#e81123"            }
     }
+
+    AppBar { id: appBar }
 
     Drawer {
         id: nav
