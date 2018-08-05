@@ -33,6 +33,68 @@ ApplicationWindow {
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
 
+    ToolBar {
+        id: appBar
+        height: 56
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
+
+        property color appBarRectColor
+        property alias headerText: appBar.headerText
+
+        Rectangle {
+            id: appBarRect
+            anchors.fill: parent
+            color: appBarRectColor
+
+            Text {
+                id: headerText
+                text: qsTr("Шифр Цезаря")
+                color: "white"
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    left: parent.left
+                    margins: 72
+                }
+
+                font {
+                    family: robotoMediumFont.name
+                    pointSize: 15
+                }
+            }
+        }
+
+        Item {
+            id: menuItem
+            width: 56
+            height: 56
+            anchors {
+                top: parent.top
+                left: parent.left
+            }
+
+            clip: true
+
+            MenuBackIcon {
+                id: menuBackIcon
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    margins: 17
+                }
+                //anchors.centerIn: parent
+            }
+
+            ToolButton {
+                anchors.centerIn: parent
+                scale: 3.1
+                onClicked: nav.open()
+            }
+        }
+    }
+
     Loader {
         id: loader
         source: "Caesar.qml"
@@ -47,51 +109,51 @@ ApplicationWindow {
             switch(index) {
             case 0:
                 loader.source = "Caesar.qml"
-                headerText.text = "Шифр Цезаря"
-                appBar.aappBarRectColor = "#4285f4"
+                appBar.headerText = "Шифр Цезаря"
+                appBarRect.color = "#4285f4"
                 break;
             case 1:
                 loader.source = "Vernam.qml"
-                headerText.text = "Шифр Вернама"
-                appBar.aappBarRectColor = "#e91e63"
+                appBar.headerText = "Шифр Вернама"
+                appBarRect.color  = "#e91e63"
                 break;
             case 2:
                 loader.source = "Vigenere.qml"
-                headerText.text = "Шифр Виженера"
-                appBar.aappBarRectColor = "#f44336"
+                appBar.headerText = "Шифр Виженера"
+                appBarRect.color = "#f44336"
                 break;
             case 3:
                 loader.source = "Gronsfeld.qml"
-                headerText.text = "Шифр Гронсфельда"
-                appBar.aappBarRectColor = "#673ab7"
+                appBar.headerText = "Шифр Гронсфельда"
+                appBarRect.color = "#673ab7"
                 break;
             case 4:
                 loader.source = "Morse.qml"
-                headerText.text = "Азбука Морзе"
-                appBar.aappBarRectColor = "#3f51b5"
+                appBar.headerText = "Азбука Морзе"
+                appBarRect.color = "#3f51b5"
                 break;
             case 5:
                 loader.source = "Enigma.qml"
-                headerText.text = "Алгоритм Энигмы"
-                appBar.aappBarRectColor = "#9c27b0"
+                appBar.headerText = "Алгоритм Энигмы"
+                appBarRect.color = "#9c27b0"
                 break;
             case 6:
                 loader.source = "Settings.qml"
-                headerText.text = "Настройки"
-                appBar.aappBarRectColor = "#424242"
+                appBar.headerText = "Настройки"
+                appBarRect.color = "#424242"
                 break;
             case 7:
                 loader.source = "About.qml"
-                headerText.text = "О программе"
-                appBar.aappBarRectColor = "#ff9269"
+                appBar.headerText = "О программе"
+                appBarRect.color = "#ff9269"
                 break;
             case 8:
                 close()
                 break;
             default:
                 loader.source = "Caesar.qml"
-                headerText.text = "Шифр Цезаря"
-                appBar.aappBarRectColor = "#4285f4"
+                appBar.headerText = "Шифр Цезаря"
+                appBarRect.color = "#4285f4"
                 break;
             }
         }
@@ -110,8 +172,6 @@ ApplicationWindow {
         ListElement { name: qsTr("О программе"); iconColor: "#ff9269"      }
         ListElement { name: qsTr("Выход"); iconColor: "#e81123"            }
     }
-
-    AppBar { id: appBar }
 
     Drawer {
         id: nav
